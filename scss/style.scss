@@ -1,0 +1,23 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+.pageOption {
+  width: 100vw; 
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  .option { 
+    width: 49%; 
+  }
+  .option:nth-child(1) {
+    background: url('../images/newyork.jpg');
+  }
+  .option:nth-child(2) {
+    background: url('../images/borabora.jpg');
+  }
+}
+
