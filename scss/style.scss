@@ -5,7 +5,7 @@
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
-.pageOption {
+.page-option {
   width: 100vw; 
   height: 100vh;
   display: flex;
@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     font-size: 70px;
+    letter-spacing: 10px;
     text-align: center;
     line-height: 400px;
     font-weight: bold;
@@ -33,21 +34,10 @@
     background: url('../images/borabora.jpg');
   }  
 }
-.pageOption:nth-child(2) {
+.page-option:nth-child(2) {
   position: absolute;
   top: 0;
   left: 0;
-}
-.logo{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 400px;
-  height: 200px;
-  background-image: url('../images/fotodawid_logo.png');
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 #romb {
   position: absolute;
@@ -57,6 +47,17 @@
   width: 350px;
   height: 350px;
   background: white;
+}
+#logo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 200px;
+  background-image: url('../images/fotodawid_logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 
