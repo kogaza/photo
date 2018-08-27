@@ -39,7 +39,7 @@ class App extends Component {
           </div>
         </div>
         <div id="romb"></div>
-        <div id="logo"></div>
+        <div id="logo-home"></div>
       </div>
 
     return (

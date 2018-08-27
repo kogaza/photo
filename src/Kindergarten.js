@@ -20,7 +20,7 @@ const MainMenu = () => {
       <Link to="/kindergarten/gallery">
         <button>Galeria</button>
       </Link>
-      <Link to="/kindergarten/studio">
+      <Link to="/studio">
         <button>Fotogtafia studyjna</button>
       </Link>
       <Link to="/contact">
@@ -39,7 +39,7 @@ class Kindergarten extends React.Component {
           <Route exact path="/kindergarten" component={AboutUs} />
           <Route exact path="/kindergarten/offer" component={KindergartenOffer} />
           <Route exact path="/kindergarten/gallery" component={KindergartenGallery} />
-          <Route exact path="/kindergarten/studio" component={Studio} />
+          <Route exact path="/studio" component={Studio} />
           <Route exact path="/contact" component={Contact} />
         </div>
       </Router>

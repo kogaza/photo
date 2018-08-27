@@ -3,6 +3,10 @@
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
 .page-option {
   width: 100vw; 
   height: 100vh;
@@ -58,11 +62,18 @@
   height: 350px;
   background: white;
 }
-#logo{
+#logo-home{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  width: 400px;
+  height: 200px;
+  background-image: url('./images/fotodawid_logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#logo {
   width: 400px;
   height: 200px;
   background-image: url('./images/fotodawid_logo.png');
@@ -88,8 +99,82 @@ nav li {
 nav a {
   text-decoration: none;
   color: brown;
+  font-size: 24px;
 }
 nav a:hover {
   color: black;
 }
-
+.aboutUs {
+  text-align: justify;
+}
+.aboutUs H1 {
+  font-size: 42px;
+  padding-top: 40px;
+  text-align: center;
+}
+.aboutUs p {
+  font-size: 24px;
+  padding-top: 20px;
+  line-height: 30px;
+}
+/* .aboutUs img {
+  width: 200px;
+  height: 100px;
+} */
+.test {
+  border: 2px solid red;
+  width: 100vw;
+  height: 150px;
+}
+.photo-gallery {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.photos {
+  background-size: cover;
+  width: 250px;
+  height: 150px;
+  cursor: pointer;
+}
+.photo1 {
+  background-image: url("./images/studio4.jpg");
+}
+.photo2 {
+  background-image: url("./images/studio5.jpg");
+}
+.photo3 {
+  background-image: url("./images/studio6.jpg");
+}
+.photo4 {
+  background-image: url("./images/studio7.jpg");
+}
+.showMe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1200px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.showMe div {
+  width: 1200px;
+  height: 880px;
+  background-size: cover;
+  border-radius: 5px;
+}
+.exitButton {
+  width: 150px;
+  height: 30px;
+  background-color:rgba(247, 229, 229, 0.3);
+  position: relative;
+  bottom: 50px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.exitButton:hover {
+  background-color:rgba(255, 179, 179, 0.3);
+}
