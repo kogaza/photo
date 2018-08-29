@@ -1,14 +1,9 @@
 import React from 'react';
+import '../App.css';
 
-class KindergartenOffer extends React.Component {
-  
-  
-  render() {
-    return (
-      <div>Przedszkole Oferta działa</div>
-    );
-  }
-}
 
+const KindergartenOffer = () => (
+  <div> Oferta Przedszkola działa </div>
+);
 
 export default KindergartenOffer;

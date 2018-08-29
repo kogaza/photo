@@ -3,6 +3,10 @@
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+.backColor {
+  background-color: white;
+  transform: translateY(-70px);
+}
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -62,6 +66,20 @@
   height: 350px;
   background: white;
 }
+.bannerAndNav {
+  width: 100vw;
+  height: 100vh;
+}
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('./images/kindergarten.jpg') no-repeat;
+  background-size: cover;
+  z-index: -5;
+}
 #logo-home{
   position: absolute;
   top: 50%;
@@ -74,6 +92,8 @@
   background-size: contain;
 }
 #logo {
+  position: absolute;
+  top: 70px;
   width: 400px;
   height: 200px;
   background-image: url('./images/fotodawid_logo.png');
@@ -151,9 +171,9 @@ nav a:hover {
 }
 .showMe {
   position: absolute;
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%); */
   width: 1200px;
   height: 900px;
   display: flex;
@@ -165,6 +185,7 @@ nav a:hover {
   height: 880px;
   background-size: cover;
   border-radius: 5px;
+  border: 2px solid brown;
 }
 .exitButton {
   width: 150px;

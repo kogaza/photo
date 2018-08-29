@@ -1,14 +1,11 @@
 import React from 'react';
+import '../App.css';
 
-class KindergartenGallery extends React.Component {
-  
-  
-  render() {
-    return (
-      <div>Przedszkole Galeria działa</div>
-    );
-  }
-}
 
+const KindergartenGallery = () => (
+  <div>
+    <h1>Galeria Przedszkola działa</h1>
+  </div>
+);
 
 export default KindergartenGallery;
