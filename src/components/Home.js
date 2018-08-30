@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div>
+    <h1 className="h1-photo">Fotografia <br /> studyjna</h1>
+    <h1 className="h1-photo">Fotografia <br /> przedszkolna</h1>
     <div className='page-option'>
-      <div className='option-text'>Fotografia <br /> studyjna</div>
-      <div className='option-text'>Fotografia <br /> przedszkolna</div>
-    </div>
-    <div className='page-option'>
-
       <div className='option'>
         <Link to="/studio">
           <span>""</span>
