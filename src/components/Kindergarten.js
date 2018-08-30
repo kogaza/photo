@@ -5,8 +5,10 @@ import Studio from './Studio'
 import KindergartenOffer from './KindergartenOffer'
 import KindergartenGallery from './KindergartenGallery'
 import Contact from './Contact'
-import AboutUs from './AboutUs';
+import AboutUsKindergarten from './AboutUsKindergarten';
 import {scrollPage} from './scrollPage'
+import {menuUp} from './menuUp'
+
 
 window.addEventListener('scroll', function (e) {
   window.requestAnimationFrame(function () {
@@ -24,7 +26,7 @@ const Kindergarten = () => (
         <nav>
           <Link to="/"><div id="logo"></div></Link>
           <ul>
-            <li>
+            <li onClick={() => menuUp('about-us-kindergarten')}>
               <Link to="/kindergarten"> Studio </Link>
             </li>
             <li>
@@ -45,7 +47,7 @@ const Kindergarten = () => (
     </div>
     <div className="back-color">
       <Switch>
-        <Route exact path="/kindergarten" component={AboutUs} />
+        <Route exact path="/kindergarten" component={AboutUsKindergarten} />
         <Route exact path="/kindergarten/offer" component={KindergartenOffer} />
         <Route exact path="/kindergarten/gallery" component={KindergartenGallery} />
         <Route exact path="/studio" component={Studio} />

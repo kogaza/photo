@@ -5,8 +5,9 @@ import StudioOffer from './StudioOffer'
 import StudioGallery from './StudioGallery'
 import Kindergarten from './Kindergarten'
 import Contact from './Contact'
-import AboutUs from './AboutUs'
+import AboutUsStudio from './AboutUsStudio'
 import {scrollPage} from './scrollPage'
+import {menuUp} from './menuUp'
 
 window.addEventListener('scroll', function (e) {
   window.requestAnimationFrame(function () {
@@ -24,7 +25,7 @@ const Studio = () => (
         <nav>
           <Link to="/"><div id="logo"></div></Link>
           <ul>
-            <li>
+            <li onClick={() => menuUp('about-us-studio')}>
               <Link to="/studio"> Studio </Link>
             </li>
             <li>
@@ -45,9 +46,9 @@ const Studio = () => (
     </div>
     <div className="back-color">
       <Switch>
-        <Route exact path="/studio" component={AboutUs} />
-        <Route exact path="/studio/gallery" component={StudioGallery} />
+        <Route exact path="/studio" component={AboutUsStudio} />
         <Route exact path="/studio/offer" component={StudioOffer} />
+        <Route exact path="/studio/gallery" component={StudioGallery} />
         <Route exact path="/kindergarten" component={Kindergarten} />
         <Route exact path="/studio/contact" component={Contact} />
       </Switch>
