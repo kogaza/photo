@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div>
-    <h1 className="h1-photo">Fotografia <br /> studyjna</h1>
-    <h1 className="h1-photo">Fotografia <br /> przedszkolna</h1>
+    <div className="h1-photo">
+    <h1 >Fotografia <br /> studyjna</h1>
+
+    </div>
+    <div className="h1-photo">
+    <h1 >Fotografia <br /> przedszkolna</h1>
+
+    </div>
     <div className='page-option'>
       <div className='option'>
         <Link to="/studio">

@@ -1,21 +1,21 @@
 import React from 'react';
 
 const showImage = (photo) => {
-  let newWindow = document.createElement('div');
-  let showPhoto = document.createElement('div');
-  let exitButton = document.createElement('button');
-  let arg = photo;
-  showPhoto.classList.add(arg);
-  newWindow.classList.add('showMe');
-  let position
-  newWindow.appendChild(showPhoto);
-  exitButton.innerText = 'zamknij';
-  exitButton.classList.add('exitButton');
-  newWindow.appendChild(exitButton);
-  document.body.appendChild(newWindow);
-  exitButton.addEventListener('click', function () {
-    newWindow.parentElement.removeChild(newWindow);
-  })
+  // let newWindow = document.createElement('div');
+  // let showPhoto = document.createElement('div');
+  // let exitButton = document.createElement('button');
+  // let arg = photo;
+  // showPhoto.classList.add(arg);
+  // newWindow.classList.add('showMe');
+  // let position
+  // newWindow.appendChild(showPhoto);
+  // exitButton.innerText = 'zamknij';
+  // exitButton.classList.add('exitButton');
+  // newWindow.appendChild(exitButton);
+  // document.body.appendChild(newWindow);
+  // exitButton.addEventListener('click', function () {
+  //   newWindow.parentElement.removeChild(newWindow);
+  // })
 }
 
 const AboutUsKindergarten = () => (
@@ -48,8 +48,8 @@ const AboutUsKindergarten = () => (
       </div>
     </div>
     <div className="container">
-      <h3> Sesje zdjęciowe w przedszkolach wykonujemy już od 21lat.<br />
-      Działamy na terenie całego śląska. </h3>
+      <p> Sesje zdjęciowe w przedszkolach wykonujemy już od 21 lat.<br />
+      Działamy na terenie całego śląska. </p>
     </div>
     <div className="panorama"></div>
     <footer>Wszelkie prawa zastrzeżone</footer>
