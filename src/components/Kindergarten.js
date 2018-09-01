@@ -16,9 +16,13 @@ window.addEventListener('scroll', function (e) {
   });
 });
 
+const bannerUp = () => {
+  console.log('załadowane');
+}
+
 const Kindergarten = () => (
-  <div>
-    <div className="banner-container">
+  <div onChange={() => bannerUp()}>
+    <div id="banner-kindergarten" className="banner-container">
       <div className="banner banner-kindergarten"></div>
     </div>
     <div className="belt-nav">
@@ -35,7 +39,7 @@ const Kindergarten = () => (
             <li>
               <Link to="/kindergarten/gallery"> Galeria </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('banner-kindergarten')}>
               <Link to="/studio"> Fotografia studyjna </Link>
             </li>
             <li>

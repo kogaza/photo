@@ -23,6 +23,7 @@ p, footer {
   display: flex;
   justify-content: space-between;
 }
+
 .option, .option-text{ 
   width: 49%;
   display: flex;
@@ -51,6 +52,19 @@ p, footer {
   background-size: cover;          
   background-repeat: no-repeat;
   background-position: center center;
+}
+@media screen and (max-width: 600px) {
+  .option {
+    width: auto;
+    height: 49vh;
+  }
+ .option:nth-child(1) {
+    background-image: url('./images/bannerStudioSmall.jpg');
+    background-position-x: left;
+  } 
+  .option:nth-child(2) {
+    background-image: url('./images/bannerKindergartenSmall.jpg');
+ } 
 }
 .h1-photo {
   width: 50%;
@@ -85,6 +99,32 @@ p, footer {
     font-size: 24px;
   }
 }
+@media screen and (max-width: 600px) {
+  .page-option {
+    flex-direction: column;
+  }
+  .h1-photo {
+    font-size: 10px;
+    letter-spacing: 5px;
+    line-height: 20px;
+    padding: 0 5px;
+    width: auto;
+    height: 10vh;
+    z-index: 5;
+  }
+  .h1-photo:nth-child(1) {
+    left: auto;
+    right: 0;
+    justify-content: flex-end;
+    top: 5vh;
+    color: white;
+  }
+  .h1-photo:nth-child(2) {
+    right: auto;
+    left: 0;
+    top: 85vh;
+  }
+}
 .option span {
   display: inline-block;
   opacity: 0;
@@ -115,6 +155,13 @@ p, footer {
   #romb {
     width: 200px;
     height: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #romb {
+    width: 160px;
+    height: 160px;
+    border-radius: 100% 50%;
   }
 }
 .banner-container {
@@ -163,6 +210,12 @@ p, footer {
   #logo-home {
     width: 220px;
     height: 110px;
+  }
+}
+@media screen and (max-width: 600px){
+  #logo-home {
+    width: 180px;
+    height: 90px;
   }
 }
 #logo {
@@ -230,6 +283,7 @@ nav a:hover {
   padding: 80px;
   text-align: center;
 }
+
 #about-us-studio h2, #about-us-kindergarten h2 {
   letter-spacing: 3px;
   font-size: 28px;
@@ -245,7 +299,7 @@ nav a:hover {
 #about-us-studio p, #about-us-kindergarten p {
   font-size: 28px;
   line-height: 35px;
-  padding: 50px 10px;
+  padding: 20px 10px;
 }
 @media screen and (max-width: 1200px) {
   #about-us-studio p, #about-us-kindergarten p {
@@ -265,7 +319,7 @@ nav a:hover {
   height: 150px;
 }
 .photo-gallery {
-  /* padding: 50px 0; */
+  padding-bottom: 20px;
   display: flex;
 }
 .photo-box {
@@ -275,6 +329,7 @@ nav a:hover {
   overflow: hidden;
 }
 .photos {
+  background-position: center;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -303,7 +358,7 @@ nav a:hover {
   width: 50vw;
   height: 100vh;
 }
-.photo1 {
+.studio04 {
   background-image: url("./images/studio4.jpg");
 }
 .photo2 {
@@ -339,12 +394,18 @@ nav a:hover {
 .kids3 {
   background-image: url("./images/kids3.jpg");
 }
+.kids5 {
+  background-image: url("./images/kids5.jpg");
+}
 .kids04 {
   background-image: url("./images/kids4.jpg");
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 70vh;
+}
+.bobo {
+  background-image: url("./images/bobo.jpg");
 }
 .studio08 {
   background-image: url("./images/studio8.jpg");

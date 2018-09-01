@@ -17,7 +17,7 @@ window.addEventListener('scroll', function (e) {
 
 const Studio = () => (
   <div>
-    <div className="banner-container">
+    <div id="banner-studio" className="banner-container">
       <div className="banner banner-woman"></div>
     </div>
     <div className="belt-nav">
@@ -34,7 +34,7 @@ const Studio = () => (
             <li>
               <Link to="/studio/gallery"> Galeria </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('banner-studio')}>
               <Link to="/kindergarten"> Fotografia przedszkolna </Link>
             </li>
             <li>
