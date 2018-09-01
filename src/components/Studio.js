@@ -6,8 +6,8 @@ import StudioGallery from './StudioGallery'
 import Kindergarten from './Kindergarten'
 import Contact from './Contact'
 import AboutUsStudio from './AboutUsStudio'
-import {scrollPage} from './scrollPage'
-import {menuUp} from './menuUp'
+import { scrollPage } from './scrollPage'
+import { menuUp } from './menuUp'
 
 window.addEventListener('scroll', function (e) {
   window.requestAnimationFrame(function () {
@@ -20,8 +20,14 @@ const Studio = () => (
     <div id="banner-studio" className="banner-container">
       <div className="banner banner-woman"></div>
     </div>
+    <div id="logo-portrait"></div>
     <div className="belt-nav">
       <div className="container">
+        <div className="hamburger-container">
+          <div className="hamburger"></div>
+          <div className="hamburger"></div>
+          <div className="hamburger"></div>
+        </div>
         <nav>
           <Link to="/"><div id="logo"></div></Link>
           <ul>

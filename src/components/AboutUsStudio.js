@@ -7,7 +7,6 @@ const showImage = (photo) => {
   let arg = photo;
   showPhoto.classList.add(arg);
   newWindow.classList.add('showMe');
-  let position
   newWindow.appendChild(showPhoto);
   exitButton.innerText = 'zamknij';
   exitButton.classList.add('exitButton');
