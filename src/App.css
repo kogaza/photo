@@ -3,7 +3,7 @@
   padding: 0;
   font-family: 'Caveat', cursive;  
 }
-p, footer {
+p, h1, footer {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
 }
@@ -35,11 +35,6 @@ p, footer {
   font-weight: bold;
   transition: 1s;
 }
-.option:hover {
-  opacity: 0.3;
-  transition: 0.8s;
-  cursor: pointer;
-}
 .option:nth-child(1) {
   background-image: url('./images/studio.jpg');
   background-size: cover;          
@@ -53,27 +48,36 @@ p, footer {
   background-position: center center;
 }
 .h1-photo {
-  width: 50%;
-  height: 100vh;
   position: absolute;
   top: 0;
   font-size: 48px;
   line-height: 40vh;
-  z-index: -5;
   text-align: center;
-  letter-spacing: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
   transition: 1s;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 50px;
+  padding: 0 25px;
+  width: 49%;
+  height: 100%;
+  cursor: pointer;
 }
 .h1-photo:nth-child(1) {
+  align-items: flex-end;
+  justify-content: flex-start;
   left: 0;
 }
+.h1-photo:nth-child(1) h1 {
+  color: rgba(255, 255, 255, 0);
+}
 .h1-photo:nth-child(2) {
+  align-items: flex-start;
+  justify-content: flex-end;
   right: 0;
+  color: rgba(0, 0, 0, 0);
+}
+.h1-photo h1 {
+  padding: 40px;
+  font-size: 70px;
 }
 .option span {
   display: inline-block;
@@ -94,6 +98,7 @@ p, footer {
   width: 350px;
   height: 350px;
   background: white;
+  border-radius:20px;
 }
 .banner-container {
   height: 100vh;
@@ -153,13 +158,13 @@ p, footer {
 nav {
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid brown;
 }
 nav ul {
   display: flex;
   flex-direction: row;
 }
 nav li {
+  transition: 0.5s;
   list-style-type: none;
   text-align: center;
   margin: 15px 0 10px 0;
@@ -174,7 +179,7 @@ nav li:first-child {
 nav a {
 
   text-decoration: none;
-  color: brown;
+  color: #db4d50;
   font-size: 28px;
 }
 nav a:hover {
@@ -184,9 +189,7 @@ nav a:hover {
   text-align: justify;
 }
 #about-us-studio h1, #about-us-kindergarten h1 {
-  text-transform: uppercase;
-  letter-spacing: 18px;
-  font-size: 42px;
+  font-size: 60px;
   padding: 80px;
   text-align: center;
 }
@@ -291,6 +294,12 @@ nav a:hover {
 .kids5 {
   background-image: url("./images/kids5.jpg");
 }
+.kids06 {
+  background-image: url("./images/kids6.jpg");
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+}
 .kids04 {
   background-image: url("./images/kids4.jpg");
   background-size: cover;
@@ -313,6 +322,12 @@ nav a:hover {
 .studio03 {
   background-image: url("./images/studio3.jpg");
 }
+.flowers {
+  background-image: url("./images/flowers.jpg");
+  background-size: cover;
+  background-position-x: center;
+  width: 30%;
+}
 .panorama {
   background-image: url("./images/panorama.jpg");
   height: 350px;
@@ -332,7 +347,7 @@ nav a:hover {
   height: 880px;
   background-size: cover;
   border-radius: 5px;
-  border: 2px solid brown;
+  border: 2px solid #db4d50;
 }
 .exitButton {
   width: 150px;
@@ -349,14 +364,69 @@ nav a:hover {
 .belt-nav {
   transform: translateY(-70px);
   background-color: white;
+  border-bottom: 1px solid #db4d50;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .belt-nav-top {
   position: fixed; 
   top: 0;
   left: 0; 
   z-index: 100; 
-  width: 100vw;
+  width: 100%;
   transform: translateY(0);
+}
+.show-second {
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  transition: 0.5s;
+  
+}
+.show-photo {
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+  width: 40px;
+  height: 60px;
+  display: absolute;
+  top: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  transition: 1s;
+}
+.show-studio-photo {
+  background-image: url('./images/studioMini.jpg');
+}
+.show-kindergarten-photo {
+  background-image: url('./images/kindergartenMini.jpg');
+}
+.show-text {
+  width: 160px;
+  height: 60px;
+  text-align: center;
+  transform: translateX(100px) rotate(-90deg) scale(0.5);
+  color: rgba(0, 146, 204, 0);
+  transition: 0.4s;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  z-index: -3;
+}
+.text-and-photo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.text-width-photo {
+  margin: 10px 0;
+  width: 70%;
 }
 .hamburger-container {
   display: none;
@@ -374,7 +444,7 @@ footer {
   padding: 20px 0;
 }
 @media screen and (max-width: 1400px){
-  .h1-photo {
+  .h1-photo h1 {
     font-size: 28px;
   }
   #romb {
@@ -386,8 +456,16 @@ footer {
     height: 150px;
   }
 }
+@media screen and (max-width: 1250px){
+  nav a {
+    font-size: 22px;
+  }
+  .show-photo {
+    height: 55px;
+  }
+}
 @media screen and (max-width: 1200px){
-  .h1-photo {
+  .h1-photo h1 {
     font-size: 24px;
   }
   #romb {
@@ -400,9 +478,6 @@ footer {
   }
   #logo {
     transform: translateY(-5px);
-  }
-  nav a {
-    font-size: 22px;
   }
   #about-us-studio p, #about-us-kindergarten p {
     margin: auto 10px;
@@ -419,6 +494,12 @@ footer {
   }
   .photo-kids .photo-box:nth-child(1) {
     display: none !important
+  }
+
+}
+@media screen and (max-width: 1150px) {
+  nav li {
+    padding: 5px 20px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -438,7 +519,7 @@ footer {
   nav a {
     font-size: 16px;
   }
-  .h1-photo {
+  .h1-photo h1 {
     font-size: 10px;
     letter-spacing: 5px;
     line-height: 20px;
@@ -496,7 +577,8 @@ footer {
   }
  .option:nth-child(1) {
     background-image: url('./images/homeStudioLarge.jpg');
-    background-position-x: left;
+    background-position-x: right;
+    margin: 5px;
   } 
   .option:nth-child(2) {
     background-image: url('./images/homeKindergartenLarge.jpg');
@@ -505,7 +587,6 @@ footer {
     flex-direction: column;
   }
   .h1-photo {
-    font-size: 20px;
     letter-spacing: 5px;
     line-height: 40px;
     padding: 0 25px;
@@ -524,6 +605,9 @@ footer {
     right: auto;
     left: 0;
     top: 85vh;
+  }
+  .h1-photo h1 {
+    font-size: 20px;
   }
   #romb {
     width: 260px;
@@ -561,7 +645,6 @@ footer {
     flex-direction: column;
   }
   .h1-photo {
-    font-size: 10px;
     letter-spacing: 5px;
     line-height: 20px;
     padding: 0 5px;
@@ -580,6 +663,9 @@ footer {
     right: auto;
     left: 0;
     top: 85vh;
+  }
+  .h1-photo h1 {
+    font-size: 10px;
   }
   #romb {
     width: 160px;

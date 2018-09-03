@@ -3,6 +3,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import '../App.css';
 import StudioOffer from './StudioOffer'
 import StudioGallery from './StudioGallery'
+import StudioClient from './StudioClient'
 import Kindergarten from './Kindergarten'
 import Contact from './Contact'
 import AboutUsStudio from './AboutUsStudio'
@@ -14,6 +15,18 @@ window.addEventListener('scroll', function (e) {
     scrollPage(window.scrollY);
   });
 });
+
+const showKindergarten = () => {
+  const showText = document.querySelector('.show-text');
+  showText.style.width = '160px';
+  showText.style.transform = 'translateX(0) rotate(0) scale(1)';
+  showText.style.color = 'rgb(0, 146, 204)';
+}
+
+const hideKindergarten = () => {
+  const showText = document.querySelector('.show-text');
+  showText.style.cssText = '';
+}
 
 const Studio = () => (
   <div>
@@ -40,8 +53,8 @@ const Studio = () => (
             <li>
               <Link to="/studio/gallery"> Galeria </Link>
             </li>
-            <li onClick={() => menuUp('banner-studio')}>
-              <Link to="/kindergarten"> Fotografia przedszkolna </Link>
+            <li>
+              <Link to="/studio/client"> Panel klienta </Link>
             </li>
             <li>
               <Link to="studio/contact"> Kontakt </Link>
@@ -49,12 +62,26 @@ const Studio = () => (
           </ul>
         </nav>
       </div>
+      <div className="show-second">
+        <div className="show-text" >
+          <span>Zobacz również <br /> <b>Fotografię przedszkolną</b></span>
+        </div>
+        <Link to="/kindergarten">
+          <div className="show-photo show-kindergarten-photo"
+            onClick={() => menuUp('banner-studio')}
+            onMouseOver={() => showKindergarten()}
+            onMouseOut={() => hideKindergarten()}
+          >
+          </div>
+        </Link>
+      </div>
     </div>
     <div className="back-color">
       <Switch>
         <Route exact path="/studio" component={AboutUsStudio} />
         <Route exact path="/studio/offer" component={StudioOffer} />
         <Route exact path="/studio/gallery" component={StudioGallery} />
+        <Route exact path="/studio/client" component={StudioClient} />
         <Route exact path="/kindergarten" component={Kindergarten} />
         <Route exact path="/studio/contact" component={Contact} />
       </Switch>
