@@ -31,7 +31,7 @@ p, h1, footer {
   font-size: 70px;
   letter-spacing: 10px;
   text-align: center;
-  line-height: 400px;
+  /* line-height: 400px; */
   font-weight: bold;
   transition: 1s;
 }
@@ -51,11 +51,9 @@ p, h1, footer {
   position: absolute;
   top: 0;
   font-size: 48px;
-  line-height: 40vh;
   text-align: center;
   transition: 1s;
   display: flex;
-  line-height: 50px;
   padding: 0 25px;
   width: 49%;
   height: 100%;
@@ -179,13 +177,33 @@ nav li:first-child {
   margin-left: 20px;
 }
 nav a {
-
   text-decoration: none;
   color: #db4d50;
   font-size: 28px;
 }
 nav a:hover {
   color: black;
+}
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 112;
+}
+.nav-mobile ul{
+  display: flex;
+  flex-direction: column;
+}
+.nav-mobile li {
+  margin: 5px !important;
+  padding: 3px 5px;
+  font-weight: bold;
+  background-color: rgba(219, 77, 80, 0.8);
+  border-radius: 2px;
+}
+.nav-mobile a {
+  color: white;
 }
 #about-us-studio, #about-us-kindergarten {
   text-align: justify;
@@ -534,9 +552,7 @@ footer {
   .h1-photo h1 {
     font-size: 10px;
     letter-spacing: 5px;
-    line-height: 20px;
     padding: 0 5px;
-    height: 10vh;
     z-index: 5;
   }
   .h1-photo:nth-child(1) {
@@ -548,8 +564,10 @@ footer {
   }
 }
 @media screen and (orientation: portrait) {
-  #romb {
-    border-radius: 100% 50%;
+  .option span {
+    width: 100vw;
+    height: 50vh;
+    border: 2px solid red;
   }
   .banner-woman {
     background: url('./images/bannerStudioLargePortrait.jpg') no-repeat;
@@ -597,6 +615,7 @@ footer {
     display: none;  
   }
 
+
 }
 @media screen and (max-width: 1200px) and (orientation: portrait) {
   .option {
@@ -606,7 +625,6 @@ footer {
  .option:nth-child(1) {
     background-image: url('./images/homeStudioLarge.jpg');
     background-position-x: right;
-    margin: 5px;
   } 
   .option:nth-child(2) {
     background-image: url('./images/homeKindergartenLarge.jpg');
@@ -616,7 +634,6 @@ footer {
   }
   .h1-photo {
     letter-spacing: 5px;
-    line-height: 40px;
     padding: 0 25px;
     width: auto;
     height: 10vh;
@@ -627,15 +644,20 @@ footer {
     right: 0;
     justify-content: flex-end;
     top: 5vh;
-    color: white;
   }
   .h1-photo:nth-child(2) {
     right: auto;
     left: 0;
     top: 85vh;
   }
+  .h1-photo:nth-child(1) h1 {
+    color: white;
+  }
+  .h1-photo:nth-child(2) h1 {
+    color: black;
+  }
   .h1-photo h1 {
-    font-size: 20px;
+    font-size: 40px;
   }
   #romb {
     width: 260px;
@@ -671,30 +693,21 @@ footer {
   }
   .h1-photo {
     letter-spacing: 5px;
-    line-height: 20px;
     padding: 0 5px;
     width: auto;
     height: 10vh;
     z-index: 5;
   }
-  .h1-photo:nth-child(1) {
-    left: auto;
-    right: 0;
-    justify-content: flex-end;
-    top: 5vh;
-    color: white;
-  }
-  .h1-photo:nth-child(2) {
-    right: auto;
-    left: 0;
-    top: 85vh;
-  }
   .h1-photo h1 {
-    font-size: 10px;
+    font-size: 20px;
   }
   #romb {
     width: 160px;
     height: 160px;
+  }
+  #logo-home {
+    width: 160px;
+    height: 80px;
   }
   portrait {
     width: 180px;
@@ -759,6 +772,14 @@ footer {
   }
 }
 @media screen and (max-width: 350px) and (orientation: portrait) {
+  #romb {
+    width: 120px;
+    height: 120px;
+  }
+  #logo-home {
+    width: 120px;
+    height: 60px;
+  }
   #about-us-studio h1, #about-us-kindergarten h1 {
     padding-bottom: 30px;
   }

@@ -32,7 +32,7 @@ const Home = () => (
         onMouseOut={() => hideText('.text-studio h1')}
       >
         <Link to="/studio">
-          <span></span>
+          <span>'</span>
         </Link>
       </div>
       <div className='option'
@@ -40,7 +40,7 @@ const Home = () => (
         onMouseOut={() => hideText('.text-kindergarten h1')}
       >
         <Link to="/kindergarten">
-          <span></span>
+          <span>'</span>
         </Link>
       </div>
     </div>

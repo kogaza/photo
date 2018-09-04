@@ -28,14 +28,40 @@ const hideKindergarten = () => {
   showText.style.cssText = '';
 }
 
+const showMobileMenu = () => {
+  const hamburger = document.querySelector('.hamburger-container');
+  const navMobile = document.querySelector('.nav-mobile');
+  hamburger.style.transform = 'scale(0)';
+  navMobile.style.display = 'block';
+}
+
 const Studio = () => (
   <div>
-    <div className="hamburger-container">
+    <div className="hamburger-container" onClick={() => showMobileMenu()}>
       <div className="hamburger"></div>
       <div className="hamburger"></div>
       <div className="hamburger"></div>
     </div>
-    <div id="logo-portrait"></div>
+    <Link to="/"><div id="logo-portrait"></div></Link>
+    <nav className="nav-mobile">
+      <ul>
+        <li onClick={() => menuUp('about-us-studio')}>
+          <Link to="/studio"> Studio </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-studio')}>
+          <Link to="/studio/offer"> Oferta </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-studio')}>
+          <Link to="/studio/gallery"> Galeria </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-studio')}>
+          <Link to="/studio/client"> Panel klienta </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-studio')}>
+          <Link to="studio/contact"> Kontakt </Link>
+        </li>
+      </ul>
+    </nav>
     <div id="banner-studio" className="banner-container">
       <div className="banner banner-woman"></div>
     </div>
@@ -47,16 +73,16 @@ const Studio = () => (
             <li onClick={() => menuUp('about-us-studio')}>
               <Link to="/studio"> Studio </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-studio')}>
               <Link to="/studio/offer"> Oferta </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-studio')}>
               <Link to="/studio/gallery"> Galeria </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-studio')}>
               <Link to="/studio/client"> Panel klienta </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-studio')}>
               <Link to="studio/contact"> Kontakt </Link>
             </li>
           </ul>
