@@ -37,7 +37,7 @@ const AboutUsStudio = () => (
       <p> Działamy od 1997r uwieczniając na fotografiach najważniejsze chwile z życia naszych Klientów.
         Od 21 lat zajmujemy się fotografią rodzinną, biznesową, sesjami przedszkolnymi, ślubnymi, komunijnymi.
           Wieloletnie doświadczenie i indywidualne podejście do każdego klienta pozwala nam spełniać oczekiwania Klientów i czerpać radość z wykonywanej pracy.</p>
-
+    <div className="studio04Small"></div>
     <div className="text-and-photo"> 
     <div className="text-width-photo">
       <p> To co robimy, to dla nas nie tylko praca - fotografia jest naszą pasją.

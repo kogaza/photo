@@ -76,6 +76,7 @@ p, h1, footer {
   color: rgba(0, 0, 0, 0);
 }
 .h1-photo h1 {
+  font-family: 'Caveat', cursive;
   padding: 40px;
   font-size: 70px;
 }
@@ -145,6 +146,7 @@ p, h1, footer {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 #logo {
   position: relative;
   top: 10px;
@@ -225,12 +227,12 @@ nav a:hover {
   flex: 1;
   overflow: hidden;
 }
+
 .photos {
   background-position: center;
   width: 100%;
   height: 100%;
   background-size: cover;
-  cursor: pointer;
   transition: 0.5s;
 }
 .photos:hover {
@@ -312,6 +314,14 @@ nav a:hover {
 }
 .studio08 {
   background-image: url("./images/studio8.jpg");
+}
+.studio04Small {
+  background-image: url("./images/studio4Small.jpg");
+  background-size: cover;
+  background-position: center;
+  display: none;
+  width: 100%;
+  height: 350px;
 }
 .studio07 {
   background-image: url("./images/studio7.jpg");
@@ -429,15 +439,17 @@ nav a:hover {
   width: 70%;
 }
 .hamburger-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   display: none;
-  width: 38px;
-  height: 32px;
   background-color: rgba(255,255,255,0);
+  z-index: 111;
 }
 .hamburger {
   width: 30px;
   height: 0;
-  border: 4px solid red;
+  border: 4px solid #db4d50;
   margin-bottom: 5px;
 }
 footer {
@@ -560,15 +572,31 @@ footer {
   .belt-nav ul {
     display: none;
   }
+  .back-color {
+    transform: translateY(0);
+  }
   #logo {
     display: none;    
   }
   .hamburger-container {
     display: block;
   }
+  .hamburger {
+    width: 50px;
+    border: 5px solid #db4d50;
+    margin-bottom: 10px;
+  }
   #logo-portrait {
     display: block;
+    position: fixed;
+    z-index: 111;
+    width: 150px;
+    height: 75px;
   }
+  .show-second {
+    display: none;  
+  }
+
 }
 @media screen and (max-width: 1200px) and (orientation: portrait) {
   .option {
@@ -617,9 +645,6 @@ footer {
     width: 300px;
     height: 150px;
   }
-
-}
-@media screen and (max-width: 1200px) and (orientation: portrait) {
   .banner-woman {
     background: url('./images/bannerStudioMediumPortrait.jpg') no-repeat;
       background-size: cover;
@@ -634,7 +659,7 @@ footer {
   }
 }
 @media screen and (max-width: 600px) and (orientation: portrait) {
- .option:nth-child(1) {
+  .option:nth-child(1) {
     background-image: url('./images/homeStudioSmall.jpg');
     background-position-x: left;
   } 
@@ -677,16 +702,80 @@ footer {
   }
   .banner-woman {
     background: url('./images/bannerStudioSmallPortrait.jpg') no-repeat;
-      background-size: cover;
-      background-position-y: center;
-      background-position-x: center;
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: center;
   }
   .banner-kindergarten {
-    background: url('./images/bannerKindergartenSmallPortrait.jpg') no-repeat;
-      background-size: cover;
-      background-position-y: center;
-      background-position-x: center;
+  background: url('./images/bannerKindergartenSmallPortrait.jpg') no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: center;
+  }
+  #about-us-studio p, #about-us-kindergarten p {
+    font-size: 16px;
+    padding: 10px;
+    line-height: 20px;
+  }
+  #about-us-studio h1, #about-us-kindergarten h1 {
+    font-size: 24px;
+    padding: 50px;
+  }
+  .hamburger {
+    width: 30px;
+    border: 3px solid #db4d50;
+    margin-bottom: 6px;
+  }
+  #logo-portrait {
+    width: 120px;
+    height: 60px;
+  }
+  .photos {
+    background-position: right;
+  }
+  .panorama {
+    background-image: url("./images/panoramaSmall.jpg");
+    height: 350px;
+  }
+  .text-and-photo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .text-width-photo {
+    width: 100%;
+  }
+  .flowers {
+    background-image: url("./images/photos.jpg");
+    width: 100%;
+    height: 350px;
+  }
+  .studio04Small {
+    display: block;
+    height: 200px;
+  }
+  .photo-box {
+    height: 200px;
   }
 }
-
+@media screen and (max-width: 350px) and (orientation: portrait) {
+  #about-us-studio h1, #about-us-kindergarten h1 {
+    padding-bottom: 30px;
+  }
+  .hamburger-container {
+    top: 10px;
+    right: 10px;
+  }
+  .hamburger {
+    width: 25px;
+    border: 2px solid #db4d50;
+    margin-bottom: 5px;
+  }
+  #logo-portrait {
+    top: 3px;
+    left: 3px;
+    width: 80px;
+    height: 40px;
+  }
+}
 

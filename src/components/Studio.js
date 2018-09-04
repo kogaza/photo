@@ -30,17 +30,17 @@ const hideKindergarten = () => {
 
 const Studio = () => (
   <div>
+    <div className="hamburger-container">
+      <div className="hamburger"></div>
+      <div className="hamburger"></div>
+      <div className="hamburger"></div>
+    </div>
+    <div id="logo-portrait"></div>
     <div id="banner-studio" className="banner-container">
       <div className="banner banner-woman"></div>
     </div>
-    <div id="logo-portrait"></div>
     <div className="belt-nav">
       <div className="container">
-        <div className="hamburger-container">
-          <div className="hamburger"></div>
-          <div className="hamburger"></div>
-          <div className="hamburger"></div>
-        </div>
         <nav>
           <Link to="/"><div id="logo"></div></Link>
           <ul>
