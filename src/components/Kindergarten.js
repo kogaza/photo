@@ -5,8 +5,7 @@ import KindergartenOffer from './KindergartenOffer'
 import KindergartenGallery from './KindergartenGallery'
 import Contact from './Contact'
 import AboutUsKindergarten from './AboutUsKindergarten';
-import { scrollPage } from './scrollPage'
-import { menuUp } from './menuUp'
+import { menuUp, scrollPage, showElement, hideElement } from './functions'
 
 
 window.addEventListener('scroll', function (e) {
@@ -15,19 +14,37 @@ window.addEventListener('scroll', function (e) {
   });
 });
 
-const showStudio = () => {
-  const showText = document.querySelector('.show-text');
-  showText.style.width = '160px';
-  showText.style.transform = 'translateX(0) rotate(0) scale(1)';
-  showText.style.color = 'rgb(0, 146, 204)';
-}
-const hideStudio = () => {
-  const showText = document.querySelector('.show-text');
-  showText.style.cssText = '';
+const showMobileMenu = () => {
+  const hamburger = document.querySelector('.hamburger-container');
+  const navMobile = document.querySelector('.nav-mobile');
+  hamburger.style.transform = 'scale(0)';
+  navMobile.style.display = 'block';
 }
 
 const Kindergarten = () => (
   <div>
+    <div className="hamburger-container" onClick={() => showMobileMenu()}>
+      <div className="hamburger"></div>
+      <div className="hamburger"></div>
+      <div className="hamburger"></div>
+    </div>
+    <Link to="/"><div id="logo-portrait"></div></Link>
+    <nav className="nav-mobile">
+      <ul>
+        <li onClick={() => menuUp('about-us-kindergarten')}>
+          <Link to="/kindergarten"> Studio </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-kindergarten-offer')}>
+          <Link to="/kindergarten/offer"> Oferta </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-kindergarten-gallery')}>
+          <Link to="/kindergarten/gallery"> Galeria </Link>
+        </li>
+        <li onClick={() => menuUp('about-us-contact')}>
+          <Link to="kindergarten/contact"> Kontakt </Link>
+        </li>
+      </ul>
+    </nav>
     <div id="banner-kindergarten" className="banner-container">
       <div className="banner banner-kindergarten"></div>
     </div>
@@ -39,13 +56,13 @@ const Kindergarten = () => (
             <li onClick={() => menuUp('about-us-kindergarten')}>
               <Link to="/kindergarten"> Studio </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-kindergarten-offer')}>
               <Link to="/kindergarten/offer"> Oferta </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-kindergarten-gallery')}>
               <Link to="/kindergarten/gallery"> Galeria </Link>
             </li>
-            <li>
+            <li onClick={() => menuUp('about-us-contact')}>
               <Link to="kindergarten/contact"> Kontakt </Link>
             </li>
           </ul>
@@ -58,8 +75,8 @@ const Kindergarten = () => (
         <Link to="/studio">
           <div className="show-photo show-studio-photo"
             onClick={() => menuUp('banner-kindergarten')}
-            onMouseOver={() => showStudio()}
-            onMouseOut={() => hideStudio()}
+            onMouseOver={() => showElement()}
+            onMouseOut={() => hideElement()}
           >
           </div>
         </Link>

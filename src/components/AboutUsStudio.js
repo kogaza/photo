@@ -1,36 +1,47 @@
 import React from 'react';
+import '../App.css';
+import { menuUp } from './functions'
 
-const showImage = (photo) => {
-  let newWindow = document.createElement('div');
-  let showPhoto = document.createElement('div');
-  let exitButton = document.createElement('button');
-  let arg = photo;
-  showPhoto.classList.add(arg);
-  newWindow.classList.add('showMe');
-  newWindow.appendChild(showPhoto);
-  exitButton.innerText = 'zamknij';
-  exitButton.classList.add('exitButton');
-  newWindow.appendChild(exitButton);
-  document.body.appendChild(newWindow);
-  exitButton.addEventListener('click', function () {
-    newWindow.parentElement.removeChild(newWindow);
-  })
-}
-const AboutUsStudio = () => (
+
+// const showImage = (photo) => {
+//   let newWindow = document.createElement('div');
+//   let showPhoto = document.createElement('div');
+//   let exitButton = document.createElement('button');
+//   let arg = photo;
+//   showPhoto.classList.add(arg);
+//   newWindow.classList.add('showMe');
+//   newWindow.appendChild(showPhoto);
+//   exitButton.innerText = 'zamknij';
+//   exitButton.classList.add('exitButton');
+//   newWindow.appendChild(exitButton);
+//   document.body.appendChild(newWindow);
+//   exitButton.addEventListener('click', function () {
+//     newWindow.parentElement.removeChild(newWindow);
+//   })
+// }
+export default class AboutUsStudio extends React.Component {
+  
+  componentDidMount() {
+    const element = document.getElementById("about-us-studio");
+    menuUp(element);
+  }
+  
+  render() {
+    return (
   <div id="about-us-studio">
     <div className="container">
       <h1> Fotografia studyjna </h1>
     </div>
     <div className="photo-gallery photo-studio">
       <div className="photo-box">
-        <div className="photos studio08" onClick={() => showImage('photo1')}>
+        <div className="photos studio08">
         </div>
       </div>
       <div className="photo-box">
-        <div className="photos bobo" onClick={() => showImage('photo2')}></div>
+        <div className="photos bobo"></div>
       </div>
       <div className="photo-box">
-        <div className="photos studio04" onClick={() => showImage('photo3')}></div>
+        <div className="photos studio04"></div>
       </div>
     </div>
     <div className="container">
@@ -55,6 +66,7 @@ const AboutUsStudio = () => (
     <div className="panorama"></div>
     <footer>Wszelkie prawa zastrzeżone</footer>
   </div>
-);
+ )
+}
+}
 
-export default AboutUsStudio;

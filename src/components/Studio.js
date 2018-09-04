@@ -7,26 +7,14 @@ import StudioClient from './StudioClient'
 import Kindergarten from './Kindergarten'
 import Contact from './Contact'
 import AboutUsStudio from './AboutUsStudio'
-import { scrollPage } from './scrollPage'
-import { menuUp } from './menuUp'
+import { menuUp, scrollPage, showElement, hideElement } from './functions'
+
 
 window.addEventListener('scroll', function (e) {
   window.requestAnimationFrame(function () {
     scrollPage(window.scrollY);
   });
 });
-
-const showKindergarten = () => {
-  const showText = document.querySelector('.show-text');
-  showText.style.width = '160px';
-  showText.style.transform = 'translateX(0) rotate(0) scale(1)';
-  showText.style.color = 'rgb(0, 146, 204)';
-}
-
-const hideKindergarten = () => {
-  const showText = document.querySelector('.show-text');
-  showText.style.cssText = '';
-}
 
 const showMobileMenu = () => {
   const hamburger = document.querySelector('.hamburger-container');
@@ -45,19 +33,19 @@ const Studio = () => (
     <Link to="/"><div id="logo-portrait"></div></Link>
     <nav className="nav-mobile">
       <ul>
-        <li onClick={() => menuUp('about-us-studio')}>
+        <li >
           <Link to="/studio"> Studio </Link>
         </li>
-        <li onClick={() => menuUp('about-us-studio')}>
+        <li >
           <Link to="/studio/offer"> Oferta </Link>
         </li>
-        <li onClick={() => menuUp('about-us-studio')}>
+        <li >
           <Link to="/studio/gallery"> Galeria </Link>
         </li>
-        <li onClick={() => menuUp('about-us-studio')}>
+        <li >
           <Link to="/studio/client"> Panel klienta </Link>
         </li>
-        <li onClick={() => menuUp('about-us-studio')}>
+        <li >
           <Link to="studio/contact"> Kontakt </Link>
         </li>
       </ul>
@@ -70,19 +58,19 @@ const Studio = () => (
         <nav>
           <Link to="/"><div id="logo"></div></Link>
           <ul>
-            <li onClick={() => menuUp('about-us-studio')}>
+            <li >
               <Link to="/studio"> Studio </Link>
             </li>
-            <li onClick={() => menuUp('about-us-studio')}>
+            <li >
               <Link to="/studio/offer"> Oferta </Link>
             </li>
-            <li onClick={() => menuUp('about-us-studio')}>
+            <li >
               <Link to="/studio/gallery"> Galeria </Link>
             </li>
-            <li onClick={() => menuUp('about-us-studio')}>
+            <li >
               <Link to="/studio/client"> Panel klienta </Link>
             </li>
-            <li onClick={() => menuUp('about-us-studio')}>
+            <li >
               <Link to="studio/contact"> Kontakt </Link>
             </li>
           </ul>
@@ -95,8 +83,8 @@ const Studio = () => (
         <Link to="/kindergarten">
           <div className="show-photo show-kindergarten-photo"
             onClick={() => menuUp('banner-studio')}
-            onMouseOver={() => showKindergarten()}
-            onMouseOut={() => hideKindergarten()}
+            onMouseOver={() => showElement()}
+            onMouseOut={() => hideElement()}
           >
           </div>
         </Link>

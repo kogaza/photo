@@ -25,14 +25,14 @@ const AboutUsKindergarten = () => (
     </div>
     <div className="photo-gallery photo-kids">
       <div className="photo-box">
-        <div className="photos kids2" onClick={() => showImage('kids1')}>
+        <div className="photos kids2">
         </div>
       </div>
       <div className="photo-box">
-        <div className="photos kids3" onClick={() => showImage('kids2')}></div>
+        <div className="photos kids3"></div>
       </div>
       <div className="photo-box">
-        <div className="photos kids5" onClick={() => showImage('kids3')}></div>
+        <div className="photos kids5"></div>
       </div>
     </div>
     <div className="container">
