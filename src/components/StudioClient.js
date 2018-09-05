@@ -5,8 +5,7 @@ import { menuUp } from './functions'
 export default class StudioClient extends React.Component {
   
   componentDidMount() {
-    const element = document.getElementById("about-us-studio-client");
-    menuUp(element);
+    menuUp("about-us-studio-client");
   }
   
   render() {

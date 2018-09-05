@@ -20,12 +20,7 @@ import { menuUp } from './functions'
 //   })
 // }
 export default class AboutUsStudio extends React.Component {
-  
-  componentDidMount() {
-    const element = document.getElementById("about-us-studio");
-    menuUp(element);
-  }
-  
+   
   render() {
     return (
   <div id="about-us-studio">

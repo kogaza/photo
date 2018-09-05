@@ -1,23 +1,42 @@
-export const menuUp = (page) => {
+export const menuUp = (pageId) => {
   // console.log('page: ', page);
-  // const element = document.getElementById(page);
-  page.scrollIntoView({ block: 'start',  behavior: 'smooth' });
-  const navMobile = document.querySelector('.nav-mobile');
-  const hamburger = document.querySelector('.hamburger-container');
-  if(navMobile && hamburger){
-    navMobile.style.cssText = '';
-    hamburger.style.cssText = '';
+  const element = document.getElementById(pageId);
+  if (element) {
+    element.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
+  // const navMobile = document.querySelector('.nav-mobile');
+  // const hamburger = document.querySelector('.hamburger-container');
+  // if(navMobile && hamburger){
+  //   navMobile.style.cssText = '';
+  //   hamburger.style.cssText = '';
+
+}
+const onScroll = () => {
+  window.requestAnimationFrame(function () {
+    scrollPage(window.scrollY);
+  });
+}
+
+
+let banner;
+let backColor;
+let navBelt;
+let wh;
+export const startScrolling = () => {
+  banner = document.querySelector('.banner');
+  backColor = document.querySelector('.back-color');
+  navBelt = document.querySelector('.belt-nav');
+  wh = window.innerHeight;
+  window.addEventListener('scroll', onScroll);
+}
+export const stopScrolling = () => {
+  window.removeEventListener('scroll', onScroll);
 }
 
 export const scrollPage = (scroll_pos) => {
-  var banner = document.querySelector('.banner');
-  var backColor = document.querySelector('.back-color');
   var pos = scroll_pos;
-  var navBelt = document.querySelector('.belt-nav');
   if (navBelt !== null) {
-
-    if (window.innerHeight < window.scrollY + 70) {
+    if (wh < pos + 70) {
       if (!navBelt.classList.contains('belt-nav-top')) {
         navBelt.classList.add('belt-nav-top');
         backColor.style = 'transform: translateY(0)';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
+import { NavLink as Link, Switch, Route } from 'react-router-dom';
 import '../App.css';
 import StudioOffer from './StudioOffer'
 import StudioGallery from './StudioGallery'
@@ -7,101 +7,121 @@ import StudioClient from './StudioClient'
 import Kindergarten from './Kindergarten'
 import Contact from './Contact'
 import AboutUsStudio from './AboutUsStudio'
-import { menuUp, scrollPage, showElement, hideElement } from './functions'
+import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
 
+class Studio extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hamburger: true
+    }
+  }
 
-window.addEventListener('scroll', function (e) {
-  window.requestAnimationFrame(function () {
-    scrollPage(window.scrollY);
-  });
-});
+  componentDidMount() {
+    startScrolling();
+  }
+  componentWillUnmount() {
+    stopScrolling();
+  }
 
-const showMobileMenu = () => {
-  const hamburger = document.querySelector('.hamburger-container');
-  const navMobile = document.querySelector('.nav-mobile');
-  hamburger.style.transform = 'scale(0)';
-  navMobile.style.display = 'block';
-}
+  mobileMenu = (arg) => {
+    let hamburger = this.state.hamburger;
+    if(arg === 'studio') menuUp("about-us-studio")
+    this.setState({
+      hamburger: !hamburger
+    })
+  }
 
-const Studio = () => (
-  <div>
-    <div className="hamburger-container" onClick={() => showMobileMenu()}>
-      <div className="hamburger"></div>
-      <div className="hamburger"></div>
-      <div className="hamburger"></div>
-    </div>
-    <Link to="/"><div id="logo-portrait"></div></Link>
-    <nav className="nav-mobile">
-      <ul>
-        <li >
-          <Link to="/studio"> Studio </Link>
-        </li>
-        <li >
-          <Link to="/studio/offer"> Oferta </Link>
-        </li>
-        <li >
-          <Link to="/studio/gallery"> Galeria </Link>
-        </li>
-        <li >
-          <Link to="/studio/client"> Panel klienta </Link>
-        </li>
-        <li >
-          <Link to="studio/contact"> Kontakt </Link>
-        </li>
-      </ul>
-    </nav>
-    <div id="banner-studio" className="banner-container">
-      <div className="banner banner-woman"></div>
-    </div>
-    <div className="belt-nav">
-      <div className="container">
-        <nav>
-          <Link to="/"><div id="logo"></div></Link>
-          <ul>
-            <li >
-              <Link to="/studio"> Studio </Link>
-            </li>
-            <li >
-              <Link to="/studio/offer"> Oferta </Link>
-            </li>
-            <li >
-              <Link to="/studio/gallery"> Galeria </Link>
-            </li>
-            <li >
-              <Link to="/studio/client"> Panel klienta </Link>
-            </li>
-            <li >
-              <Link to="studio/contact"> Kontakt </Link>
-            </li>
-          </ul>
-        </nav>
+  render() {
+    let burger;
+    if (this.state.hamburger === true) {
+      burger = <div className="hamburger-container" onClick={() => this.mobileMenu()}>
+        <div className="hamburger"></div>
+        <div className="hamburger"></div>
+        <div className="hamburger"></div>
       </div>
-      <div className="show-second">
-        <div className="show-text" >
-          <span>Zobacz również <br /> <b>Fotografię przedszkolną</b></span>
+    } else if(this.state.hamburger === false) {
+      burger = <nav className="nav-mobile">
+        <ul>
+          <li onClick={() => this.mobileMenu('studio')}>
+            <Link to="/studio"> Studio </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/studio/offer"> Oferta </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/studio/gallery"> Galeria </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/studio/client"> Panel klienta </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/studio/contact"> Kontakt </Link>
+          </li>
+        </ul>
+      </nav>
+    }
+    return (
+      <div>
+        {burger}
+        <Link to="/"><div id="logo-portrait"></div></Link>
+        <div id="banner-studio" className="banner-container">
+          <div className="banner banner-woman"></div>
         </div>
-        <Link to="/kindergarten">
-          <div className="show-photo show-kindergarten-photo"
-            onClick={() => menuUp('banner-studio')}
-            onMouseOver={() => showElement()}
-            onMouseOut={() => hideElement()}
-          >
+        <div className="belt-nav">
+          <div className="container">
+            <nav>
+              <Link to="/"><div id="logo"></div></Link>
+              <ul>
+                <li onClick={() => menuUp("about-us-studio")}>
+                  <Link
+                    to="/studio"
+                    activeClassName="active"
+                  > Studio </Link>
+                </li>
+                <li >
+                  <Link to="/studio/offer"> Oferta </Link>
+                </li>
+                <li >
+                  <Link to="/studio/gallery"> Galeria </Link>
+                </li>
+                <li >
+                  <Link to="/studio/client"> Panel klienta </Link>
+                </li>
+                <li >
+                  <Link to="/studio/contact"> Kontakt </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </Link>
-      </div>
-    </div>
-    <div className="back-color">
-      <Switch>
-        <Route exact path="/studio" component={AboutUsStudio} />
-        <Route exact path="/studio/offer" component={StudioOffer} />
-        <Route exact path="/studio/gallery" component={StudioGallery} />
-        <Route exact path="/studio/client" component={StudioClient} />
-        <Route exact path="/kindergarten" component={Kindergarten} />
-        <Route exact path="/studio/contact" component={Contact} />
-      </Switch>
-    </div>
-  </div >
-);
+          <div className="show-second">
+            <div className="show-text" >
+              <span>Zobacz również <br /> <b>Fotografię przedszkolną</b></span>
+            </div>
+            <Link to="/kindergarten">
+              <div className="show-photo show-kindergarten-photo"
+                onClick={() => menuUp('banner-studio')}
+                onMouseOver={() => showElement()}
+                onMouseOut={() => hideElement()}
+              >
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div className="back-color">
+          <Switch>
+            <Route exact path="/studio" component={AboutUsStudio} />
+            <Route exact path="/studio/offer" component={StudioOffer} />
+            <Route exact path="/studio/gallery" component={StudioGallery} />
+            <Route exact path="/studio/client" component={StudioClient} />
+            <Route exact path="/kindergarten" component={Kindergarten} />
+            <Route exact path="/studio/contact" component={Contact} />
+          </Switch>
+        </div>
+      </div >
 
+    )
+  }
+}
 export default Studio;
 

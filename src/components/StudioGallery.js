@@ -5,8 +5,7 @@ import { menuUp } from './functions'
 export default class StudioGallery extends React.Component {
   
   componentDidMount() {
-    const element = document.getElementById("about-us-studio-gallery");
-    menuUp(element);
+    menuUp("about-us-studio-gallery");
   }
   
   render() {

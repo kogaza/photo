@@ -5,8 +5,7 @@ import { menuUp } from './functions'
 export default class Contact extends React.Component {
   
   componentDidMount() {
-    const element = document.getElementById("about-us-contact");
-    menuUp(element);
+    menuUp("about-us-contact");
   }
   
   render() {
