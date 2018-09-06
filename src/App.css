@@ -87,6 +87,9 @@ p, h1, footer {
   padding: 40px;
   font-size: 70px;
 }
+.h1-photo a {
+  text-decoration: none;
+}
 .option span {
   display: inline-block;
   opacity: 0;
@@ -142,17 +145,21 @@ p, h1, footer {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.belt-logo-burger {
+  display: none;
+  width: 100vw;
+  background-color: rgba(255,255,255,0.9);
+}
 #logo-portrait {
   display: none;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 120px;
   height: 50px;
   background-image: url('./images/fotodawid_logo.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: rgba(255,255,255,0.9);
 }
 
 #logo {
@@ -207,9 +214,9 @@ nav a:hover {
 }
 .nav-mobile li {
   margin: 5px !important;
-  padding: 3px 5px;
+  padding: 3px 25px;
   font-weight: bold;
-  background-color: rgba(219, 77, 80, 0.8);
+  background-color: rgba(219, 77, 80, 0.9);
   border-radius: 2px;
 }
 .nav-mobile a {
@@ -240,11 +247,9 @@ nav a:hover {
   line-height: 35px;
   padding: 20px 10px;
 }
-/* .test {
-  border: 2px solid red;
-  width: 100vw;
-  height: 150px;
-} */
+.h1-photo span {
+  display: none;
+}
 .photo-gallery {
   padding-bottom: 20px;
   display: flex;
@@ -466,6 +471,16 @@ nav a:hover {
   margin: 10px 0;
   width: 70%;
 }
+.show-burger {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 111;
+}
 .hamburger-container {
   position: fixed;
   top: 15px;
@@ -483,9 +498,10 @@ nav a:hover {
 footer {
   padding: 20px 0;
 }
+/* --------------------------------------------------------- width 1400px  */
 @media screen and (max-width: 1400px){
   .h1-photo h1 {
-    font-size: 28px;
+    font-size: 60px;
   }
   #romb {
     width: 250px;
@@ -496,6 +512,7 @@ footer {
     height: 150px;
   }
 }
+/* --------------------------------------------------------- width 1250px  */
 @media screen and (max-width: 1250px){
   nav a {
     font-size: 22px;
@@ -504,9 +521,10 @@ footer {
     height: 55px;
   }
 }
+/* --------------------------------------------------------- width 1200px  */
 @media screen and (max-width: 1200px){
   .h1-photo h1 {
-    font-size: 48px;
+    font-size: 52px;
   }
   #romb {
     width: 200px;
@@ -521,12 +539,13 @@ footer {
   }
   #about-us-studio p, #about-us-kindergarten p {
     margin: auto 10px;
-    font-size: 24px;
-    padding-top: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 10px;
   }
   #about-us-studio h1, #about-us-kindergarten h1 {
     font-size: 28px;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     text-align: center;
   }
   .photo-studio .photo-box:nth-child(1) {
@@ -537,11 +556,73 @@ footer {
   }
 
 }
+/* --------------------------------------------------------- width 1150px  */
 @media screen and (max-width: 1150px) {
   nav li {
     padding: 5px 20px;
   }
 }
+/* --------------------------------------------------------- width 1025px  */
+@media screen and (max-width: 1025px) {
+  .page-option {
+    height: 83vh;
+  }
+  .option span {
+    display: none;
+  }
+  .h1-photo span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 49vw;
+    height: 83vh;
+    z-index: 115;
+    font-size: 0;
+  }
+  .h1-photo {
+    position: absolute;
+    width: 49vw;
+    height: 83vh;
+    padding: 0;
+  }
+  .option:nth-child(1) {
+    background-position: top;
+  }
+  .h1-photo:nth-child(1) {
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .h1-photo:nth-child(2) {
+    top: 0;
+    left: 51vw;
+    justify-content: center;
+    align-items: flex-start
+  }
+  .h1-photo h1 {
+    font-size: 36px;
+    line-height: 36px;
+    padding: 10px;
+    z-index: 5;
+  }
+  .h1-photo:nth-child(1) h1 {
+    color: white;
+  }
+  .h1-photo:nth-child(2) h1 {
+    color: black;
+  }
+  .panorama {
+    background-image: url("./images/panoramaMedium.jpg");
+    height: 300px;
+  }
+  #romb, #logo-home {
+    top: 45%; 
+  }
+}
+
+/* --------------------------------------------------------- width 1000px  */
 @media screen and (max-width: 1000px) {
   .photo-studio .photo-box:last-child {
     display: none !important
@@ -549,8 +630,54 @@ footer {
   .photo-kids .photo-box:last-child {
     display: none !important
   }
+  .belt-nav {
+    display:none;
+  }
+  .belt-nav-top {
+    display:none;
+  }
+  .belt-nav ul {
+    display: none;
+  }
+  #logo {
+    display: none;    
+  }
+  .show-burger {
+    display: block;
+  }
+  .hamburger-container {
+    display: block;
+    top: 10px;
+  }
+  .hamburger {
+    width: 40px;
+    border: 3px solid #db4d50;
+    margin-bottom: 6px;
+  }
+  .belt-logo-burger {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 111;
+    height: 50px;
+  }
+  #logo-portrait {
+    display: block;
+    position: fixed;
+    z-index: 111;
+    /* width: 150px; */
+    height: 50px;
+  }
+  .show-second {
+    display: none;  
+  }
+  .back-color {
+    transform: translateY(0);
+  }
 }
+/* --------------------------------------------------------- width 900px  */
 @media screen and (max-width: 900px){
+  
   #romb {
     width: 150px;
     height: 150px;
@@ -560,26 +687,38 @@ footer {
     height: 90px;
   }
   nav a {
-    font-size: 16px;
-  }
-  .h1-photo h1 {
-    font-size: 36px;
-    padding: 0 5px;
-    z-index: 5;
-  }
-  .h1-photo:nth-child(1) {
-    top: 85vh;
-    color: white;
-  }
-  .h1-photo:nth-child(2) {
-    top: 5vh;
+    font-size: 24px;
   }
 }
-@media screen and (orientation: portrait) {
-  .option span {
-    width: 100vw;
-    height: 50vh;
+/* --------------------------------------------------------- width 600px  */
+@media screen and (max-width: 600px){
+  .h1-photo h1 {
+    font-size: 26px;
+    line-height: 26px;
   }
+  .hamburger {
+    width: 35px;
+    border: 2px solid #db4d50;
+    margin-bottom: 4px;
+  }
+  .belt-logo-burger {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 111;
+    height: 40px;
+  }
+  #logo-portrait {
+    display: block;
+    position: fixed;
+    z-index: 111;
+    /* width: 100px; */
+    height: 42px;
+  }
+}
+/* --------------------------------------------------------- portrait  */
+@media screen and (orientation: portrait) {
+
   .banner-woman {
     background: url('./images/bannerStudioLargePortrait.jpg') no-repeat;
       background-size: cover;
@@ -592,42 +731,60 @@ footer {
       background-position-y: center;
       background-position-x: center;
   }
-  .belt-nav {
-    position: absolute;
-    top: 100px;
-    right: 30px;
-    background-color: rgba(255,255,255,0);
+}
+/* --------------------------------------------------------- width 1200px portrait  */
+@media screen and (max-width: 1200px) and (orientation: portrait) {
+  .page-option {
+    height: 90vh;
   }
-  .belt-nav ul {
+  .option span {
     display: none;
   }
-  .back-color {
-    transform: translateY(0);
-  }
-  #logo {
-    display: none;    
-  }
-  .hamburger-container {
+  .h1-photo span {
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 43vh;
+    z-index: 115;
+    font-size: 0;
   }
-  .hamburger {
-    width: 50px;
-    border: 5px solid #db4d50;
-    margin-bottom: 10px;
+  .logo-container {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100vw;
+    height: 90vh;
   }
-  #logo-portrait {
-    display: block;
-    position: fixed;
-    z-index: 111;
-    /* width: 150px; */
-    height: 75px;
+  .h1-photo {
+    position: absolute;
+    width: 100vw;
+    height: 43vh;
+    padding: 0;
   }
-  .show-second {
-    display: none;  
+  .h1-photo:nth-child(1) {
+    top: 0vh;
+    left: 0;
+    justify-content: flex-end;
+    align-items: flex-start
   }
-
-}
-@media screen and (max-width: 1200px) and (orientation: portrait) {
+  .h1-photo:nth-child(2) {
+    top: 47vh;
+    left: 0;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .h1-photo h1 {
+    font-size: 80px;
+    line-height: 70px;
+  }
+  .h1-photo:nth-child(1) h1 {
+    color: white;
+  }
+  .h1-photo:nth-child(2) h1 {
+    color: black;
+  }
   .option {
     width: 100vw;
     height: 49%;
@@ -639,34 +796,13 @@ footer {
   .option:nth-child(2) {
     background-image: url('./images/homeKindergartenLarge.jpg');
   }
+  #about-us-studio p, #about-us-kindergarten p {
+    font-size: 16px;
+    padding: 10px;
+    line-height: 20px;
+  }
   .page-option {
     flex-direction: column;
-  }
-  .h1-photo {
-    padding: 0 25px;
-    width: auto;
-    height: 20vh;
-    z-index: 5;
-  }
-  .h1-photo:nth-child(1) {
-    left: auto;
-    right: 0;
-    justify-content: flex-end;
-    top: 5vh;
-  }
-  .h1-photo:nth-child(2) {
-    right: auto;
-    left: 0;
-    top: 75vh;
-  }
-  .h1-photo:nth-child(1) h1 {
-    color: white;
-  }
-  .h1-photo:nth-child(2) h1 {
-    color: black;
-  }
-  .h1-photo h1 {
-    font-size: 80px;
   }
   #romb {
     width: 260px;
@@ -688,7 +824,54 @@ footer {
       background-position-y: center;
       background-position-x: center;
   }
+  .belt-nav {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    background-color: rgba(255,255,255,0);
+  }
+  .belt-nav ul {
+    display: none;
+  }
+  .back-color {
+    transform: translateY(0);
+  }
+  #logo {
+    display: none;    
+  }
+  .show-burger {
+    display: block;
+  }
+  .hamburger-container {
+    display: block;
+  }
+  .hamburger {
+    width: 50px;
+    border: 5px solid #db4d50;
+    margin-bottom: 10px;
+  }
+  .belt-logo-burger {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 111;
+    height: 80px;
+  }
+  #logo-portrait {
+    display: block;
+    position: fixed;
+    z-index: 111;
+    width: 170px;
+    height: 75px;
+  }
+  .show-second {
+    display: none;  
+  }
+  nav a {
+    font-size: 40px;
+  }
 }
+/* --------------------------------------------------------- width 600px portrait  */
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .option:nth-child(1) {
     background-image: url('./images/homeStudioSmall.jpg');
@@ -700,25 +883,9 @@ footer {
   .page-option {
     flex-direction: column;
   }
-  .h1-photo {
-    padding: 0 10px;
-    width: auto;
-    height: 15vh;
-    z-index: 5;
-  }
-  .h1-photo:nth-child(1) {
-    left: auto;
-    right: 0;
-    justify-content: flex-end;
-    top: 5vh;
-  }
-  .h1-photo:nth-child(2) {
-    right: auto;
-    left: 0;
-    top: 80vh;
-  }
   .h1-photo h1 {
     font-size: 48px;
+    line-height: 48px;
   }
   #romb {
     width: 160px;
@@ -727,10 +894,6 @@ footer {
   #logo-home {
     width: 160px;
     height: 80px;
-  }
-  portrait {
-    width: 180px;
-    height: 90px;
   }
   .banner-woman {
     background: url('./images/bannerStudioSmallPortrait.jpg') no-repeat;
@@ -760,7 +923,7 @@ footer {
   }
   #logo-portrait {
     /* width: 120px; */
-    height: 60px;
+    height: 50px;
   }
   .photos {
     background-position: right;
@@ -789,7 +952,18 @@ footer {
   .photo-box {
     height: 200px;
   }
+  .belt-logo-burger {
+    height: 50px;
+  }
+  #logo-portrait {
+    width: 115px;
+    height: 52px;
+  }
+  nav a {
+    font-size: 32px;
+  }
 }
+/* --------------------------------------------------------- width 350px portrait  */
 @media screen and (max-width: 350px) and (orientation: portrait) {
   #romb {
     width: 120px;
@@ -811,6 +985,9 @@ footer {
     border: 2px solid #db4d50;
     margin-bottom: 5px;
   }
+  .belt-logo-burger {
+    height: 41px;
+  }
   #logo-portrait {
     /* top: 3px;
     left: 3px; */
@@ -818,7 +995,8 @@ footer {
     height: 40px;
   }
   .h1-photo h1 {
-    font-size: 36px;
+    font-size: 24px;
+    line-height: 24px;
   }
 }
 

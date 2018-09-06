@@ -1,23 +1,17 @@
 export const menuUp = (pageId) => {
-  // console.log('page: ', page);
-  const element = document.getElementById(pageId);
-  if (element) {
-    element.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  }
-  // const navMobile = document.querySelector('.nav-mobile');
-  // const hamburger = document.querySelector('.hamburger-container');
-  // if(navMobile && hamburger){
-  //   navMobile.style.cssText = '';
-  //   hamburger.style.cssText = '';
-
+  setTimeout(function(){
+    const element = document.getElementById(pageId);
+    if (element) {
+      element.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    };
+  }, 10);
 }
+
 const onScroll = () => {
   window.requestAnimationFrame(function () {
     scrollPage(window.scrollY);
   });
 }
-
-
 let banner;
 let backColor;
 let navBelt;
