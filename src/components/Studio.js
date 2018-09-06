@@ -26,8 +26,8 @@ class Studio extends React.Component {
 
   mobileMenu = (arg) => {
     let hamburger = this.state.hamburger;
-    console.log('arg',arg);
-    if(arg === 'studio') menuUp("about-us-studio");
+    console.log('arg', arg);
+    if (arg === 'studio') menuUp("about-us-studio");
     this.setState({
       hamburger: !hamburger
     })
@@ -41,7 +41,7 @@ class Studio extends React.Component {
         <div className="hamburger"></div>
         <div className="hamburger"></div>
       </div>
-    } else if(this.state.hamburger === false) {
+    } else if (this.state.hamburger === false) {
       burger = <div><nav className="nav-mobile">
         <ul>
           <li onClick={() => this.mobileMenu('studio')}>
@@ -62,13 +62,13 @@ class Studio extends React.Component {
         </ul>
       </nav>
         <div className="show-burger" onClick={() => this.mobileMenu()}></div>
-        </div>
+      </div>
     }
     return (
       <div>
         {burger}
         <div className="belt-logo-burger">
-        <Link to="/"><div id="logo-portrait"></div></Link>
+          <Link to="/"><div id="logo-portrait"></div></Link>
         </div>
         <div id="banner-studio" className="banner-container">
           <div className="banner banner-woman"></div>

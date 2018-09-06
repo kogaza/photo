@@ -8,6 +8,12 @@ import AboutUsKindergarten from './AboutUsKindergarten';
 import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
 
 class Kindergarten extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hamburger: true
+    }
+  }
 
   componentDidMount() {
     startScrolling();
@@ -16,38 +22,49 @@ class Kindergarten extends React.Component {
     stopScrolling();
   }
 
-  showMobileMenu = () => {
-    const hamburger = document.querySelector('.hamburger-container');
-    const navMobile = document.querySelector('.nav-mobile');
-    hamburger.style.transform = 'scale(0)';
-    navMobile.style.display = 'block';
+  mobileMenu = (arg) => {
+    let hamburger = this.state.hamburger;
+    console.log('arg',arg);
+    if(arg === 'kindergarten') menuUp("about-us-kindergarten");
+    this.setState({
+      hamburger: !hamburger
+    })
   }
 
   render() {
+    let burger;
+    if (this.state.hamburger === true) {
+      burger = <div className="hamburger-container" onClick={() => this.mobileMenu()}>
+        <div className="hamburger"></div>
+        <div className="hamburger"></div>
+        <div className="hamburger"></div>
+      </div>
+    } else if (this.state.hamburger === false) {
+      burger = <div><nav className="nav-mobile">
+        <ul>
+          <li onClick={() => this.mobileMenu('kindergarten')}>
+            <Link to="/kindergarten"> Studio </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/kindergarten/offer"> Oferta </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/kindergarten/gallery"> Galeria </Link>
+          </li>
+          <li onClick={() => this.mobileMenu()}>
+            <Link to="/kindergarten/contact"> Kontakt </Link>
+          </li>
+        </ul>
+      </nav>
+        <div className="show-burger" onClick={() => this.mobileMenu()}></div>
+      </div>
+    }
     return (
       <div>
-        <div className="hamburger-container" onClick={() => this.showMobileMenu()}>
-          <div className="hamburger"></div>
-          <div className="hamburger"></div>
-          <div className="hamburger"></div>
+        {burger}
+        <div className="belt-logo-burger">
+          <Link to="/"><div id="logo-portrait"></div></Link>
         </div>
-        <Link to="/"><div id="logo-portrait"></div></Link>
-        <nav className="nav-mobile">
-          <ul>
-            <li onClick={() => menuUp('about-us-kindergarten')}>
-              <Link to="/kindergarten"> Studio </Link>
-            </li>
-            <li>
-              <Link to="/kindergarten/offer"> Oferta </Link>
-            </li>
-            <li>
-              <Link to="/kindergarten/gallery"> Galeria </Link>
-            </li>
-            <li>
-              <Link to="/kindergarten/contact"> Kontakt </Link>
-            </li>
-          </ul>
-        </nav>
         <div id="banner-kindergarten" className="banner-container">
           <div className="banner banner-kindergarten"></div>
         </div>
