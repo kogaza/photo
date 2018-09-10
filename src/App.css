@@ -217,7 +217,7 @@ nav a:hover {
   margin: 5px !important;
   padding: 3px 25px;
   font-weight: bold;
-  background-color: rgba(219, 77, 80, 0.9);
+  background-color: #db4d50;
   border-radius: 2px;
 }
 .nav-mobile a {
@@ -262,10 +262,9 @@ nav a:hover {
   overflow: hidden;
 }
 .photo-box-gallery {
-  border: 15px solid gray;
   width: 1172px;
   height: 931px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   display: flex;
 }
 .photo-box-mini {
@@ -276,20 +275,26 @@ nav a:hover {
 .photo-box-mini img {
   width: 231px;
   height: 307px;
+  transition: 0.6s;
 }
-.photo-box-mini img:nth-child(2) {
-  border-top: 5px solid gray;
-  border-bottom: 5px solid gray;
+.photo-box-mini img:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+  cursor: pointer;
 }
-.photo-box-big {
-  border-right: 5px solid gray;
-  border-left: 5px solid gray;
+.mini-img {
+  margin: 0 5px;
+}
+.mini-img:nth-child(2) {
+  margin: 5px;
 }
 .photo-box-big img {
   width: 700px;
   height: 931px;
 }
-
+.mini-img {
+  overflow: hidden;
+}
 .photos {
   background-position: center;
   width: 100%;
