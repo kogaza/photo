@@ -69,6 +69,7 @@ class Studio extends React.Component {
         {burger}
         <div className="belt-logo-burger">
           <Link to="/"><div id="logo-portrait"></div></Link>
+          {/* <Link to="/photo/"><div id="logo-portrait"></div></Link> */}
         </div>
         <div id="banner-studio" className="banner-container">
           <div className="banner banner-woman"></div>
@@ -77,24 +78,47 @@ class Studio extends React.Component {
           <div className="container">
             <nav>
               <Link to="/"><div id="logo"></div></Link>
+              {/* <Link to="/photo/"><div id="logo"></div></Link> */}
               <ul>
                 <li onClick={() => menuUp("about-us-studio")}>
                   <Link
                     to="/studio"
                     activeClassName="active"
-                  > Studio </Link>
+                  >
+                    Studio
+                  </Link>
                 </li>
                 <li >
-                  <Link to="/studio/offer"> Oferta </Link>
+                  <Link
+                    to="/studio/offer"
+                    activeClassName="active"
+                  >
+                    Oferta
+                  </Link>
                 </li>
                 <li >
-                  <Link to="/studio/gallery"> Galeria </Link>
+                  <Link
+                    to="/studio/gallery"
+                    activeClassName="active"
+                  >
+                    Galeria
+                  </Link>
                 </li>
                 <li >
-                  <Link to="/studio/client"> Panel klienta </Link>
+                  <Link
+                    to="/studio/client"
+                    activeClassName="active"
+                  >
+                    Panel klienta
+                  </Link>
                 </li>
                 <li >
-                  <Link to="/studio/contact"> Kontakt </Link>
+                  <Link
+                    to="/studio/contact"
+                    activeClassName="active"
+                  >
+                    Kontakt
+                  </Link>
                 </li>
               </ul>
             </nav>

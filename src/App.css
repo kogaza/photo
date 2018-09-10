@@ -83,9 +83,10 @@ p, h1, footer {
   color: rgba(0, 0, 0, 0);
 }
 .h1-photo h1 {
-  font-family: 'Caveat', cursive;
+  font-family: 'Poiret One', cursive;
   padding: 40px;
   font-size: 70px;
+  font-weight: bold;
 }
 .h1-photo a {
   text-decoration: none;
@@ -225,7 +226,7 @@ nav a:hover {
 #about-us-studio, #about-us-kindergarten {
   text-align: justify;
 }
-#about-us-studio h1, #about-us-kindergarten h1 {
+.title {
   font-size: 60px;
   padding: 80px;
   text-align: center;
@@ -259,6 +260,34 @@ nav a:hover {
   height: 350px;
   flex: 1;
   overflow: hidden;
+}
+.photo-box-gallery {
+  border: 15px solid gray;
+  width: 1172px;
+  height: 931px;
+  margin: 0 auto;
+  display: flex;
+}
+.photo-box-mini {
+  width: 231px;
+  display: flex;
+  flex-direction: column
+}
+.photo-box-mini img {
+  width: 231px;
+  height: 307px;
+}
+.photo-box-mini img:nth-child(2) {
+  border-top: 5px solid gray;
+  border-bottom: 5px solid gray;
+}
+.photo-box-big {
+  border-right: 5px solid gray;
+  border-left: 5px solid gray;
+}
+.photo-box-big img {
+  width: 700px;
+  height: 931px;
 }
 
 .photos {
@@ -493,8 +522,19 @@ nav a:hover {
   width: 30px;
   height: 0;
   border: 4px solid #db4d50;
+  background-color: #db4d50;
   margin-bottom: 5px;
 }
+/* #map {
+  width: 400px;
+  height: 400px;
+  background-color: grey;
+} */
+/* .map-container {
+  width: 100%;
+  height: 500px;
+} */
+
 footer {
   padding: 20px 0;
 }
@@ -543,7 +583,7 @@ footer {
     line-height: 16px;
     padding: 10px;
   }
-  #about-us-studio h1, #about-us-kindergarten h1 {
+  .title {
     font-size: 28px;
     /* padding-top: 60px; */
     text-align: center;
@@ -617,11 +657,7 @@ footer {
     background-image: url("./images/panoramaMedium.jpg");
     height: 300px;
   }
-  #romb, #logo-home {
-    top: 45%; 
-  }
 }
-
 /* --------------------------------------------------------- width 1000px  */
 @media screen and (max-width: 1000px) {
   .photo-studio .photo-box:last-child {
@@ -776,7 +812,7 @@ footer {
     align-items: flex-end;
   }
   .h1-photo h1 {
-    font-size: 80px;
+    font-size: 60px;
     line-height: 70px;
   }
   .h1-photo:nth-child(1) h1 {
@@ -884,8 +920,8 @@ footer {
     flex-direction: column;
   }
   .h1-photo h1 {
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 40px;
+    line-height: 40px;
   }
   #romb {
     width: 160px;
@@ -912,7 +948,7 @@ footer {
     padding: 10px;
     line-height: 20px;
   }
-  #about-us-studio h1, #about-us-kindergarten h1 {
+  .title {
     font-size: 20px;
     padding: 50px;
   }
@@ -973,7 +1009,7 @@ footer {
     width: 120px;
     height: 60px;
   }
-  #about-us-studio h1, #about-us-kindergarten h1 {
+  .title {
     padding-bottom: 30px;
   }
   .hamburger-container {

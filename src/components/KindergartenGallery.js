@@ -11,7 +11,7 @@ export default class KindergartenGallery extends React.Component {
   render() {
     return (
       <div id="about-us-kindergarten-gallery"> 
-        <h1 className="loremH1">Galeria Przedszkola działa</h1> 
+        <h1 className="title">Galeria Przedszkola działa</h1> 
         <p className="lorem">
           Czym jest Lorem Ipsum?
           Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker

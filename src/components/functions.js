@@ -1,5 +1,12 @@
 export const menuUp = (pageId) => {
-  setTimeout(function(){
+  if (pageId === "banner-studio" || pageId === "banner-kindergarten") {
+    const element = document.getElementById(pageId);
+    if (element) {
+      element.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    };
+    return;
+  }
+  setTimeout(function () {
     const element = document.getElementById(pageId);
     if (element) {
       element.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -56,3 +63,4 @@ export const hideElement = () => {
   const showText = document.querySelector('.show-text');
   showText.style.cssText = '';
 }
+
