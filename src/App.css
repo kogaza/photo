@@ -266,6 +266,7 @@ nav a:hover {
   height: 931px;
   margin: 0 auto 50px auto;
   display: flex;
+  position:relative;
 }
 .photo-box-mini {
   width: 231px;
@@ -288,12 +289,40 @@ nav a:hover {
 .mini-img:nth-child(2) {
   margin: 5px;
 }
+.photo-box-big {
+  position: relative;
+}
 .photo-box-big img {
   width: 700px;
   height: 931px;
 }
 .mini-img {
   overflow: hidden;
+}
+.icon-photo {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 255;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.icon-photo:last-child {
+  left: 600px;
+  transition: 0.3s;
+}
+.icon-photo:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.icon-photo i {
+  font-size: 40px;
 }
 .photos {
   background-position: center;
