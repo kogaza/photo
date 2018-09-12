@@ -1,15 +1,33 @@
 import React from 'react';
 import '../App.css';
-import { menuUp } from './functions'
+import { menuUp } from './functions';
+import Gallery1 from './Gallery1';
+import Gallery2 from './Gallery2';
 
 export default class StudioGallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      titleStudio: 'Nasze studio',
+      photosStudio: [
+        'studio01.jpg', 'studio02.jpg', 'studio03.jpg',
+        'studio04.jpg', 'studio05.jpg', 'studio06.jpg',
+        'studio07.jpg', 'studio08.jpg', 'studio09.jpg',
+        'studio10.jpg', 'studio11.jpg', 'studio12.jpg'
+      ],
+      titleOther: 'Nasze zdjęcia',
+      photosOther: [
+        'other01.jpg', 'other02.jpg', 'other03.jpg',
+        'other04.jpg', 'other05.jpg', 'other06.jpg',
+        'other07.jpg', 'other08.jpg', 'other09.jpg'
+      ],
+      titleSesion: 'Nasze sesje',
+      photosSesion: [
+        'session01.jpg', 'session02.jpg', 'session03.jpg',
+        'session04.jpg', 'session05.jpg', 'session06.jpg',
+        'session07.jpg'
+      ],
 
-      miniLeft: ['studio01.jpg', 'studio02.jpg', 'studio03.jpg'],
-      bigPhoto: 'studio01.jpg',
-      miniRight: ['studio04.jpg', 'studio05.jpg', 'studio06.jpg']
     }
   }
 
@@ -17,101 +35,20 @@ export default class StudioGallery extends React.Component {
     menuUp("about-us-studio-gallery");
   }
 
-  changeBigPhoto = (picture) => {
-    this.setState({
-      bigPhoto: picture
-    })
-  }
-
-  prevNextPhoto = (direction) => {
-    const { miniLeft, bigPhoto, miniRight } = this.state;
-    const actualPhoto = bigPhoto;
-    const indexLeft = miniLeft.indexOf(actualPhoto);
-    const indexRight = miniRight.indexOf(actualPhoto);
-    let newPhoto = '';
-    switch (direction) {
-      case 'prev':
-        if (indexLeft > 0) {
-          newPhoto = miniLeft[indexLeft - 1];
-        } else if (indexLeft === 0) {
-          newPhoto = miniRight[miniRight.length - 1];
-        }
-        if (indexRight > 0) {
-          newPhoto = miniRight[indexRight - 1];
-        } else if (indexRight === 0) {
-          newPhoto = miniLeft[miniLeft.length - 1];
-        }
-        break;
-      case 'next':
-        if (indexLeft >= 0 && indexLeft < miniLeft.length - 1) {
-          newPhoto = miniLeft[indexLeft + 1];
-        } else if (indexLeft === miniLeft.length - 1) {
-          newPhoto = miniRight[0];
-        }
-        if (indexRight >= 0 && indexRight < miniRight.length - 1) {
-          newPhoto = miniRight[indexRight + 1];
-        } else if (indexRight === miniRight.length - 1) {
-          newPhoto = miniLeft[0];
-        }
-        break;
-    }
-    this.setState({
-      bigPhoto: newPhoto
-    })
-  }
-
   render() {
-    const { miniLeft, bigPhoto, miniRight } = this.state;
-    const miniLeftImg = miniLeft.map((p, i) => {
-      let dataId = p.substring(8, 6);
-      let altText = p.substring(0, 8);
-      return (
-        <div className="mini-img" data-id={dataId} key={i}>
-          <img onClick={() => this.changeBigPhoto(p)}
-            src={`/gallery/${p}`} alt={altText}
-          ></img>
-        </div>
-      )
-    })
-    let altBigText = bigPhoto.substring(0, 8);
-    const bigPhotoImg =
-      <img id='big-photo'
-        src={`/gallery/${bigPhoto}`} alt={altBigText}
-      ></img>
-
-    const miniRightImg = miniRight.map((p, i) => {
-      let dataId = p.substring(8, 6);
-      let altText = p.substring(0, 8);
-      return (
-        <div className="mini-img" data-id={dataId} key={i}>
-          <img onClick={() => this.changeBigPhoto(p)}
-            src={`/gallery/${p}`} alt={altText}
-          ></img>
-        </div>
-      )
-    })
+    const {
+      photosStudio, 
+      titleStudio, 
+      photosOther, 
+      titleOther, 
+      photosSesion, 
+      titleSesion
+    } = this.state;
     return (
       <div id='about-us-studio-gallery'>
-        <div className='container'>
-          <h1 className='title'> Nasze studio </h1>
-        </div>
-        <div className='photo-box-gallery'>
-          <div className='photo-box-mini'>
-            {miniLeftImg}
-          </div>
-          <div className='photo-box-big'>
-            <div className='back icon-photo'>
-              <i className="fas fa-angle-double-left" onClick={() => this.prevNextPhoto('prev')}></i>
-            </div>
-            {bigPhotoImg}
-            <div className='next icon-photo'>
-              <i className="fas fa-angle-double-right" onClick={() => this.prevNextPhoto('next')}></i>
-            </div>
-          </div>
-          <div className="photo-box-mini">
-            {miniRightImg}
-          </div>
-        </div>
+      <Gallery1 photos={photosStudio} title={titleStudio} />
+      <Gallery2 photos={photosOther} title={titleOther} />
+      <Gallery1 photos={photosSesion} title={titleSesion} />
 
         <div className='panorama'></div>
         <footer>Wszelkie prawa zastrzeżone</footer>

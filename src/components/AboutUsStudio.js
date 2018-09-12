@@ -1,24 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { menuUp } from './functions'
 
-
-// const showImage = (photo) => {
-//   let newWindow = document.createElement('div');
-//   let showPhoto = document.createElement('div');
-//   let exitButton = document.createElement('button');
-//   let arg = photo;
-//   showPhoto.classList.add(arg);
-//   newWindow.classList.add('showMe');
-//   newWindow.appendChild(showPhoto);
-//   exitButton.innerText = 'zamknij';
-//   exitButton.classList.add('exitButton');
-//   newWindow.appendChild(exitButton);
-//   document.body.appendChild(newWindow);
-//   exitButton.addEventListener('click', function () {
-//     newWindow.parentElement.removeChild(newWindow);
-//   })
-// }
 export default class AboutUsStudio extends React.Component {
    
   render() {

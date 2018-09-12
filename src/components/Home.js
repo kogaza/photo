@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const showText = (text) => {
   const showText = document.querySelector(text);
   if (text === '.text-kindergarten h1') {
-    showText.style.color = 'black';
+    showText.style.color = '#db4d50';
   } else {
     showText.style.color = 'white';
   }

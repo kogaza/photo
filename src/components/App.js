@@ -1,12 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './Home'
-import Studio from './Studio'
-import Kindergarten from './Kindergarten'
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
+import Home from './Home';
+import Studio from './Studio';
+import Kindergarten from './Kindergarten';
 
 const App = () => (
   <Switch>

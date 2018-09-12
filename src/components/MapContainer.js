@@ -6,7 +6,7 @@ export class MapContainer extends React.Component {
     const mapStyle = {
       position: 'relative',
       width: '100%',
-      height: '500px'
+      height: '600px'
 
     }
     return (
@@ -35,5 +35,5 @@ export class MapContainer extends React.Component {
 }
  
 export default GoogleApiWrapper({
-  apiKey: ('AIzaSyDCF7Z3HDZN5LiwIK4bR7hAVgBCau9EfY0')
+  apiKey: ('AIzaSyA_b9USSA7FcNg7KTTTWGXW5xhZdwqsUDU')
 })(MapContainer)
