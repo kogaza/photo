@@ -7,7 +7,9 @@ export default class Gallery2 extends React.Component {
     this.state = {
       title: '',
       photos: [],
-      visiblePhotos: []
+      visiblePhotos: [],
+      bigGallery: false,
+      bigPhotoId: ''
     }
   }
 
@@ -25,16 +27,24 @@ export default class Gallery2 extends React.Component {
             photos
           })
         )
-      }, 10000
+      }, 20000
     );
   }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
-  changeBigPhoto = (picture) => {
+  showBigPhoto = (id) => {
+   
     this.setState({
-      bigPhoto: picture
+      bigGallery: true,
+      bigPhotoId: id
+    });
+  }
+
+  hideBigPhoto = () => {
+    this.setState({
+      bigGallery: false
     })
   }
 
@@ -55,38 +65,65 @@ export default class Gallery2 extends React.Component {
   }
 
   render() {
-    const { title, photos } = this.state;
+    const { title, photos, bigGallery, bigPhotoId } = this.state;
     const leftNext = window.innerWidth - 100;
     const leftStyle = {
       left: leftNext + 'px'
-    }
+    };
+
     const photoList = photos.filter((v, i) => i < 4).map((p, i) => {
       let dataId = p.substring(8, 6);
       let altText = p.substring(0, 8);
       return (
         <div className="photo-horizontal" data-id={dataId} key={i}>
           <img
-            // onClick={() => this.changeBigPhoto(p)}
+            onClick={() => this.showBigPhoto(i)}
             src={`/gallery/${p}`} alt={altText}
           ></img>
         </div>
       )
     })
-    let fullPicture =
-    <div className='show-big-photo'>
-      <img
-        src={`/gallery/studio03.jpg`} alt={'studio03'}
-      ></img>
-    </div>
+
+    const exitBut =
+      <div className='exit-button-container'>
+        <button
+          className='exit-button'
+          onClick={() => this.hideBigPhoto()}>zamknij</button>
+      </div>;
+
+    let bigPhoto = photos.length > 0 && bigPhotoId !== '' ? photos[bigPhotoId] : '';
+    let dataIdBig = bigPhoto.substring(8, 6);
+    let altTextBig = bigPhoto.substring(0, 8);
+
+    const showGallery =
+      bigGallery ?
+        <div className='big-photo-container'>
+          <div className='back' onClick={() => this.prevNextPhoto('prev')}>
+            <i className="fas fa-angle-double-left" ></i>
+          </div>
+          <div className="big-photo-gallery" data-id={dataIdBig}>
+            <img
+              src={`/gallery/${bigPhoto}`} alt={altTextBig}
+            ></img>
+            {exitBut}
+          </div>
+          <div
+            className='next-big' onClick={() => this.prevNextPhoto('next')}>
+            <i className="fas fa-angle-double-right" ></i>
+          </div>
+        </div> 
+        : photoList;
+
+
     return (
       <div >
-        {fullPicture}
-
         <div className='container'>
           <h1 className='title'> {title} </h1>
         </div>
         <div className='photo-box-gallery-horizontal'>
-          {photoList}
+          <div className='photo-box-row'>
+            {showGallery}
+          </div>
           <div className='back' onClick={() => this.prevNextPhoto('prev')}>
             <i className="fas fa-angle-double-left" ></i>
           </div>

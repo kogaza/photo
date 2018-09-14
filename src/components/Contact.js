@@ -24,6 +24,9 @@ export default class Contact extends React.Component {
           <li><a href="mailto:studio@fotodawid.eu">studio@fotodawid.eu</a></li>
           <li><a href="https://www.fotodawid.eu">www.fotodawid.eu</a></li>
         </ul>
+        <ul>
+          <li><a href="https://www.instagram.com/fotodawid/">www.instagram.com/fotodawid/</a></li>
+        </ul>
       </div>
 
         {/* <div className='map-container'> */}

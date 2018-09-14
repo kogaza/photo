@@ -265,7 +265,7 @@ nav a:hover {
   display: flex;
   position:relative;
 }
-#about-us-studio-galler {
+#about-us-studio-gallery {
   position: relative;
 }
 .show-big-photo {
@@ -285,14 +285,45 @@ nav a:hover {
 .photo-box-gallery-horizontal {
   width: 100%;
   margin-bottom:50px;
-  display: flex;
-  flex-direction: row;
   position:relative;
   overflow: hidden;
 }
+.photo-box-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.big-photo-container {
+  position: relative;
+  width: 1000px;
+}
+.big-photo-gallery img {
+  width: 100%
+}
+.exit-button-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.exit-button {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.exit-button:hover {
+  background-color: #db4d50;
+  color: white;
+  cursor: pointer;
+}
 .photo-horizontal {
+  position: relative;
   overflow: hidden;
-  width: 25vw;
+  flex: 1;
 }
 .photo-horizontal img {
   width: 100%;
@@ -353,15 +384,15 @@ nav a:hover {
   left: 600px;
   transition: 0.3s;
 }
-.icon-photo:hover, .back:hover, .next:hover {
+.icon-photo:hover, .back:hover, .next:hover, .next-big:hover {
   opacity: 1;
   cursor: pointer;
 }
-.icon-photo, .back, .next i {
+.icon-photo, .back, .next, .next-big i {
   font-size: 48px;
   color: white;
 }
-.back, .next {
+.back, .next, .next-big {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -375,6 +406,9 @@ nav a:hover {
 }
 .back {
   left: 0;
+}
+.next-big {
+  left: 900px;
 }
 
 /* .back-next-container {
