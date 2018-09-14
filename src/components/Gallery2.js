@@ -15,9 +15,12 @@ export default class Gallery2 extends React.Component {
 
   componentDidMount() {
     const { photos, title } = this.props;
+    const bigGallery = window.innerWidth > 1000 ? false : true;
     this.setState({
       title,
-      photos
+      photos,
+      bigGallery,
+      bigPhotoId: 0
     });
     this.interval = setInterval(
       () => {
@@ -35,7 +38,6 @@ export default class Gallery2 extends React.Component {
   }
 
   showBigPhoto = (id) => {
-   
     this.setState({
       bigGallery: true,
       bigPhotoId: id
@@ -66,9 +68,14 @@ export default class Gallery2 extends React.Component {
 
   render() {
     const { title, photos, bigGallery, bigPhotoId } = this.state;
-    const leftNext = window.innerWidth - 100;
-    const leftStyle = {
-      left: leftNext + 'px'
+    const rightNext = window.innerWidth - 100;
+    const rightStyle = {
+      left: rightNext + 'px'
+    };
+    const rightBigNext = window.innerWidth > 1000 ? 900 : window.innerWidth - 100;
+    const rightBigStyle = 
+    {
+      left: rightBigNext + 'px',
     };
 
     const photoList = photos.filter((v, i) => i < 4).map((p, i) => {
@@ -98,7 +105,9 @@ export default class Gallery2 extends React.Component {
     const showGallery =
       bigGallery ?
         <div className='big-photo-container'>
-          <div className='back' onClick={() => this.prevNextPhoto('prev')}>
+          <div 
+          className='back icon-photo-big' 
+          onClick={() => this.prevNextPhoto('prev')}>
             <i className="fas fa-angle-double-left" ></i>
           </div>
           <div className="big-photo-gallery" data-id={dataIdBig}>
@@ -108,10 +117,12 @@ export default class Gallery2 extends React.Component {
             {exitBut}
           </div>
           <div
-            className='next-big' onClick={() => this.prevNextPhoto('next')}>
+            className='next-big icon-photo-big' 
+            style={rightBigStyle}
+            onClick={() => this.prevNextPhoto('next')}>
             <i className="fas fa-angle-double-right" ></i>
           </div>
-        </div> 
+        </div>
         : photoList;
 
 
@@ -124,12 +135,14 @@ export default class Gallery2 extends React.Component {
           <div className='photo-box-row'>
             {showGallery}
           </div>
-          <div className='back' onClick={() => this.prevNextPhoto('prev')}>
+          <div
+            className='back'
+            onClick={() => this.prevNextPhoto('prev')}>
             <i className="fas fa-angle-double-left" ></i>
           </div>
           <div
             className='next'
-            style={leftStyle}
+            style={rightStyle}
             onClick={() => this.prevNextPhoto('next')
             }>
             <i className="fas fa-angle-double-right" ></i>
