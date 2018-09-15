@@ -43,7 +43,7 @@ class Kindergarten extends React.Component {
       burger = <div><nav className="nav-mobile">
         <ul>
           <li onClick={() => this.mobileMenu('kindergarten')}>
-            <Link to="/kindergarten"> Studio </Link>
+            <Link to="/kindergarten"> O nas </Link>
           </li>
           <li onClick={() => this.mobileMenu()}>
             <Link to="/kindergarten/offer"> Oferta </Link>
@@ -76,7 +76,7 @@ class Kindergarten extends React.Component {
               {/* <Link to="/photo/"><div id="logo"></div></Link> */}
               <ul>
                 <li onClick={() => menuUp('about-us-kindergarten')}>
-                  <Link to="/kindergarten"> Studio </Link>
+                  <Link to="/kindergarten"> O nas </Link>
                 </li>
                 <li>
                   <Link to="/kindergarten/offer"> Oferta </Link>

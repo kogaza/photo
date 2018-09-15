@@ -1,12 +1,12 @@
 import React from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
  
 export class MapContainer extends React.Component {
   render() {
     const mapStyle = {
       position: 'relative',
       width: '100%',
-      height: '600px'
+      height: '800px'
 
     }
     return (
@@ -20,15 +20,9 @@ export class MapContainer extends React.Component {
       zoom={16}>
  
         <Marker 
-          // onClick={this.onMarkerClick}
           name={'Studio Dawid'} 
           position={{lat: 50.13365, lng: 18.9692}}/>
  
-        {/* <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow> */}
       </Map>
     );
   }

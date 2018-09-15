@@ -47,7 +47,9 @@ export default class StudioGallery extends React.Component {
     return (
       <div id='about-us-studio-gallery'>
       <Gallery1 photos={photosStudio} title={titleStudio} />
+      <div className='line'></div>
       <Gallery2 photos={photosOther} title={titleOther} />
+      <div className='line'></div>
       <Gallery1 photos={photosSesion} title={titleSesion} />
 
         <div className='panorama'></div>

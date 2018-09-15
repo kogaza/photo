@@ -214,7 +214,7 @@ nav a:hover {
   margin: 5px !important;
   padding: 3px 25px;
   font-weight: bold;
-  background-color: #db4d50;
+  background-color: #f59692;
   border-radius: 2px;
 }
 .nav-mobile a {
@@ -316,7 +316,7 @@ nav a:hover {
   border-radius: 5px;
 }
 .exit-button:hover {
-  background-color: #db4d50;
+  background-color: #f59692;
   color: white;
   cursor: pointer;
 }
@@ -552,7 +552,7 @@ nav a:hover {
 .belt-nav {
   transform: translateY(-70px);
   background-color: white;
-  border-bottom: 1px solid #db4d50;
+  border-bottom: 1px solid #f59692;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -638,42 +638,91 @@ nav a:hover {
 .hamburger {
   width: 30px;
   height: 0;
-  border: 4px solid #db4d50;
-  background-color: #db4d50;
+  border: 4px solid #f59692;
+  background-color: #f59692;
   margin-bottom: 5px;
+}
+.line {
+  height: 1px;
+  width: 90%;
+  border-bottom: 1px solid #f59692;
+  margin: 0 auto;
 }
 #map {
   font-family: 'Josefin Sans', sans-serif;
+  color: #969da1;
 }
 #map h1, h2, li {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 #map li {
   list-style-type: none;
-  font-size: 30px;
-}
-#map a {
-  text-decoration: none;
-  color: #0092cc;
+  font-size: 40px;
 }
 #map ul {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  width: 800px;
+  width: 600px;
 }
-#map a:hover {
+.phones-container {
+  display: flex;
+  flex-direction: row;
+}
+.phone-icon {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.phone-icon img {
+  padding-right: 20px;
+  height: 150px;
+}
+.phones-contact a {
+  text-decoration: none;
   color: #db4d50;
+}
+.phones-contact {
+  flex-direction: column;
+  flex: 1;
+}
+.links-contact {
+  flex-direction: row;
+}
+.links-contact a {
+  text-decoration: none;
+  color: white;
+}
+.links-contact li {
+  padding: 0;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.links-contact li:nth-child(2) {
+  width: 300px;
+  background-color: #f59692;
+}
+.links-contact li:nth-child(2) a {
+  font-size: 30px;
+}
+.links-contact i {
+  font-size: 80px;
+  color: #f59692;
+}
+.links-contact i:hover {
+  color: #db4d50;
+}
+.links-contact li:nth-child(2):hover {
+  background-color: #db4d50;
 }
 #map footer {
   position: relative;
-  top: 600px;
+  top: 800px;
 }
-/* .map-container {
-  width: 100%;
-  height: 500px;
-} */
-
 footer {
   padding: 20px 0;
 }
@@ -861,7 +910,7 @@ footer {
   }
   .hamburger {
     width: 40px;
-    border: 3px solid #db4d50;
+    border: 3px solid #f59692;
     margin-bottom: 6px;
   }
   .belt-logo-burger {
@@ -875,7 +924,6 @@ footer {
     display: block;
     position: fixed;
     z-index: 111;
-    /* width: 150px; */
     height: 50px;
   }
   .show-second {
@@ -921,7 +969,16 @@ footer {
     width: 600px;
   }
   #map li {
-    font-size: 20px;
+    font-size: 30px;
+  }
+  .links-contact {
+    margin-top: 20px;
+  }
+  .phones-container {
+    width: 100%;
+  }
+  .phone-icon img {
+    height: 120px;;
   }
 }
 /* --------------------------------------------------------- width 600px  */
@@ -932,7 +989,7 @@ footer {
   }
   .hamburger {
     width: 35px;
-    border: 2px solid #db4d50;
+    border: 2px solid #f59692;
     margin-bottom: 4px;
   }
   .belt-logo-burger {
@@ -946,7 +1003,6 @@ footer {
     display: block;
     position: fixed;
     z-index: 111;
-    /* width: 100px; */
     height: 42px;
   }
   .photo-box-gallery {
@@ -962,11 +1018,17 @@ footer {
   }
   #map ul {
     width: 500px;
-    flex-direction: column;
     align-items: center;
   }
   #map li {
-    font-size: 20px;
+    font-size: 30px;
+  }
+  .links-contact li:nth-child(2) a {
+    font-size: 24px;
+    padding: 10px;
+  }
+  .links-contact i {
+    font-size: 60px;
   }
 }
 /* --------------------------------------------------------- portrait  */
@@ -1103,7 +1165,7 @@ footer {
   }
   .hamburger {
     width: 50px;
-    border: 5px solid #db4d50;
+    border: 5px solid #f59692;
     margin-bottom: 10px;
   }
   .belt-logo-burger {
@@ -1150,6 +1212,9 @@ footer {
   .icon-photo:last-child {
     left: 750px;
   }
+  .exit-button-container {
+    display: none;
+  }
   #map h1 {
     font-size: 40px;
     padding-bottom: 40px;
@@ -1159,14 +1224,13 @@ footer {
     padding-bottom: 35px;
   }
   #map ul {
-    width: 900px;
+    width: 600px;
   }
   #map li {
     font-size: 35px;
-    padding-bottom: 30px;
   }
-  #map .tel-office a {
-    color: #db4d50;
+  #map a {
+    padding: 10px;
   }
 }
 /* --------------------------------------------------------- width 600px portrait  */
@@ -1210,17 +1274,12 @@ footer {
     padding: 10px;
     line-height: 20px;
   }
-  /* .title {
-    font-size: 20px;
-    padding: 50px;
-  } */
   .hamburger {
     width: 30px;
-    border: 3px solid #db4d50;
+    border: 3px solid #f59692;
     margin-bottom: 6px;
   }
   #logo-portrait {
-    /* width: 120px; */
     height: 50px;
   }
   .photos {
@@ -1261,8 +1320,8 @@ footer {
     font-size: 32px;
   }
   .title {
-    font-size: 36px;
-    padding: 50px;
+    font-size: 28px;
+    padding: 52px;
   }
   .photo-box-gallery {
     width: 100vw;
@@ -1288,10 +1347,22 @@ footer {
   }
   #map li {
     font-size: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 0;
   }
-  #map a {
-    color: black !important;
+  .phone-icon img {
+    padding: 10px 10px 10px 0;
+    height: 80px;
+  }
+  .phones-contact {
+    align-items: flex-start !important;
+  }
+  .phones-contact a {
+    font-size: 28px;
+    padding-bottom: 15px;
+  }
+  .phones-container {
+     margin-bottom: 20px;
+     width: 100%;
   }
 }
 /* --------------------------------------------------------- width 350px portrait  */
@@ -1313,16 +1384,13 @@ footer {
   }
   .hamburger {
     width: 25px;
-    border: 2px solid #db4d50;
+    border: 2px solid #f59692;
     margin-bottom: 5px;
   }
   .belt-logo-burger {
     height: 41px;
   }
   #logo-portrait {
-    /* top: 3px;
-    left: 3px; */
-    /* width: 80px; */
     height: 40px;
   }
   .h1-photo h1 {
@@ -1330,8 +1398,8 @@ footer {
     line-height: 24px;
   }
   .title {
-    font-size: 36px;
-    padding: 50px;
+    font-size: 20px;
+    padding: 43px;
   }
   .photo-box-gallery {
     width: 100vw;
@@ -1354,6 +1422,10 @@ footer {
   }
   #map ul {
     width: 300px;
+    flex-direction: column;
+  }
+  .phones-contact a {
+    font-size: 20px;
   }
 }
 

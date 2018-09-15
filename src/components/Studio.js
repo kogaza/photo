@@ -53,9 +53,9 @@ class Studio extends React.Component {
           <li onClick={() => this.mobileMenu()}>
             <Link to="/studio/gallery"> Galeria </Link>
           </li>
-          <li onClick={() => this.mobileMenu()}>
+          {/* <li onClick={() => this.mobileMenu()}>
             <Link to="/studio/client"> Panel klienta </Link>
-          </li>
+          </li> */}
           <li onClick={() => this.mobileMenu()}>
             <Link to="/studio/contact"> Kontakt </Link>
           </li>
@@ -112,14 +112,14 @@ class Studio extends React.Component {
                     Galeria
                   </Link>
                 </li>
-                <li >
+                {/* <li >
                   <Link
                     to="/studio/client"
                     activeClassName="active"
                   >
                     Panel klienta
                   </Link>
-                </li>
+                </li> */}
                 <li >
                   <Link
                     to="/studio/contact"

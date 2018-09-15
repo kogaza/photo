@@ -36,8 +36,8 @@ export default class KindergartenGallery extends React.Component {
     return (
       <div id='about-us-kindergarten-gallery'>
         <Gallery1 photos={photosKindergarten} title={titleKindergarten} />
+        <div className='line'></div>
         <Gallery2 photos={photosKids} title={titleKids} />
-
         <div className='panorama'></div>
         <footer>Wszelkie prawa zastrzeżone</footer>
       </div>
