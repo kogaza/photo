@@ -64,12 +64,6 @@ class Studio extends React.Component {
         <div className="show-burger" onClick={() => this.mobileMenu()}></div>
       </div>
     }
-    // let fullPicture =
-    //   <div className='show-big-photo'>
-    //     <img
-    //       src={`/gallery/studio03.jpg`} alt={'studio03'}
-    //     ></img>
-    //   </div>
 
     return (
       <div>

@@ -6,7 +6,7 @@ export class MapContainer extends React.Component {
     const mapStyle = {
       position: 'relative',
       width: '100%',
-      height: '800px'
+      height: '70vh'
 
     }
     return (

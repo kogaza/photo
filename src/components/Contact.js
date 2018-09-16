@@ -36,7 +36,7 @@ export default class Contact extends React.Component {
           </ul>
         </div>
         <MapContainer />
-        <footer>Wszelkie prawa zastrzeżone</footer>
+        {/* <footer>Wszelkie prawa zastrzeżone</footer> */}
       </div>
     )
   }

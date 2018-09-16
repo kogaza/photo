@@ -404,7 +404,7 @@ nav a:hover {
   align-items: center;
   transition: 0.3s;
 }
-.back {
+.back{
   left: 0;
 }
 .photos {
@@ -664,6 +664,9 @@ nav a:hover {
   justify-content: space-around;
   width: 600px;
 }
+#map>div:last-child>div {
+  height: auto !important;
+}
 .phones-container {
   display: flex;
   flex-direction: row;
@@ -791,7 +794,6 @@ footer {
   }
   .title {
     font-size: 28px;
-    /* padding-top: 60px; */
     text-align: center;
   }
   .photo-studio .photo-box:nth-child(1) {
@@ -817,6 +819,9 @@ footer {
   }
   .icon-photo:last-child {
     left: 386px;
+  }
+  .exit-button-container {
+    display: none;
   }
 }
 /* --------------------------------------------------------- width 1150px  */
@@ -1332,7 +1337,7 @@ footer {
     height: 90vh;
   }
   .icon-photo:last-child {
-    left: 77vw;
+    left: 73vw;
   }
   #map h1 {
     font-size: 30px;
@@ -1344,10 +1349,17 @@ footer {
   }
   #map ul {
     width: 360px;
+    flex-direction: column;
   }
   #map li {
     font-size: 20px;
     padding-bottom: 0;
+  }
+  .phone-icon {
+    flex: 2;
+  }
+  .phones-contact {
+    flex: 3;
   }
   .phone-icon img {
     padding: 10px 10px 10px 0;
@@ -1410,7 +1422,7 @@ footer {
     height: 90vh;
   }
   .icon-photo:last-child {
-    left: 70vw;
+    left: 68vw;
   }
   #map h1 {
     font-size: 20px;
@@ -1422,7 +1434,6 @@ footer {
   }
   #map ul {
     width: 300px;
-    flex-direction: column;
   }
   .phones-contact a {
     font-size: 20px;
