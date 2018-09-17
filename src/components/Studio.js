@@ -9,11 +9,18 @@ import Contact from './Contact'
 import AboutUsStudio from './AboutUsStudio'
 import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
 
+import FullScreenPhoto from './FullScreenPhoto'
+
+
 class Studio extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hamburger: true
+      hamburger: true,
+      fullScreenPhoto: false,
+      fullPhoto: 'studio04.jpg',
+      photos: [],
+      left: false
     }
   }
 
@@ -32,6 +39,43 @@ class Studio extends React.Component {
       hamburger: !hamburger
     })
   }
+  showPhoto = (fullPhoto, photos) => {
+    console.log('Studio back',fullPhoto, photos);
+    this.setState({
+      fullScreenPhoto: true,
+      fullPhoto,
+      photos
+    })
+  }
+  hidePhoto = () => {
+    this.setState({
+      fullScreenPhoto: false
+    })
+  }
+  backPhoto = () => {
+    let actualPhoto = this.state.fullPhoto;
+    console.log('actualPhoto',actualPhoto);
+    let allPhotos = this.state.photos;
+    let actualId = allPhotos.indexOf(actualPhoto);
+    let newPhoto = 
+    actualId > 0 ? allPhotos[actualId-1] : allPhotos[allPhotos.length-1]
+    this.setState({
+      fullPhoto: newPhoto,
+    })
+  }
+  nextPhoto = () => {
+    let actualPhoto = this.state.fullPhoto;
+    console.log('actualPhoto',actualPhoto);
+    let allPhotos = this.state.photos;
+    let actualId = allPhotos.indexOf(actualPhoto);
+    console.log('actualId',actualId);
+    let newPhoto = 
+    actualId < allPhotos.length-1 ? allPhotos[actualId+1] : allPhotos[0]
+    this.setState({
+      fullPhoto: newPhoto,
+    })
+  }
+
 
   render() {
     let burger;
@@ -64,9 +108,23 @@ class Studio extends React.Component {
         <div className="show-burger" onClick={() => this.mobileMenu()}></div>
       </div>
     }
+    let fullPhoto =
+      this.state.fullScreenPhoto
+        ?
+        <FullScreenPhoto 
+        fullPhoto={this.state.fullPhoto}
+        // left={this.state.left} 
+        hidePhoto={() => this.hidePhoto()}
+        backPhoto={() => this.backPhoto()}
+        nextPhoto={() => this.nextPhoto()}
+        />
+        :
+        null;
 
     return (
       <div>
+        {fullPhoto}
+
         {/* {fullPicture} */}
         {burger}
         <div className="belt-logo-burger">
@@ -142,8 +200,12 @@ class Studio extends React.Component {
         <div className="back-color">
           <Switch>
             <Route exact path="/studio" component={AboutUsStudio} />
-            <Route exact path="/studio/offer" component={StudioOffer} />
-            <Route exact path="/studio/gallery" component={StudioGallery} />
+            <Route exact path="/studio/offer" component={StudioOffer} />  
+            <Route exact path="/studio/gallery" component={(props) => 
+              (<StudioGallery 
+                fullPhoto={this.state.fullPhoto} 
+                showPhoto={(photo,all) => this.showPhoto(photo,all)}
+                {...props}/>)} />
             <Route exact path="/studio/client" component={StudioClient} />
             <Route exact path="/kindergarten" component={Kindergarten} />
             <Route exact path="/studio/contact" component={Contact} />

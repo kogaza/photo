@@ -3,6 +3,8 @@ import '../App.css';
 import { menuUp } from './functions';
 import Gallery1 from './Gallery1';
 import Gallery2 from './Gallery2';
+import FullScreenPhoto from './FullScreenPhoto'
+
 
 export default class StudioGallery extends React.Component {
   constructor(props) {
@@ -36,21 +38,37 @@ export default class StudioGallery extends React.Component {
   }
 
   render() {
+    const { fullPhoto } = this.props;
     const {
-      photosStudio, 
-      titleStudio, 
-      photosOther, 
-      titleOther, 
-      photosSesion, 
+      photosStudio,
+      titleStudio,
+      photosOther,
+      titleOther,
+      photosSesion,
       titleSesion
     } = this.state;
     return (
       <div id='about-us-studio-gallery'>
-      <Gallery1 photos={photosStudio} title={titleStudio} />
-      <div className='line'></div>
-      <Gallery2 photos={photosOther} title={titleOther} />
-      <div className='line'></div>
-      <Gallery1 photos={photosSesion} title={titleSesion} />
+        <Gallery1
+          photos={photosStudio}
+          title={titleStudio}
+          fullPhoto={fullPhoto}
+          showPhoto={(photo) => this.props.showPhoto(photo)}
+        />
+        <div className='line'></div>
+        <Gallery2 
+        photos={photosOther} 
+        title={titleOther} 
+        fullPhoto={fullPhoto} 
+        showPhoto={(photo,all) => this.props.showPhoto(photo,all)}
+        />
+        <div className='line'></div>
+        <Gallery1 
+        photos={photosSesion} 
+        title={titleSesion} 
+        fullPhoto={fullPhoto} 
+        showPhoto={(photo) => this.props.showPhoto(photo)}
+        />
 
         <div className='panorama'></div>
         <footer>Wszelkie prawa zastrzeżone</footer>

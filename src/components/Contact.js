@@ -10,6 +10,28 @@ export default class Contact extends React.Component {
   }
 
   render() {
+    const links =
+      window.innerWidth < window.innerHeight & window.innerWidth <= 1000 ?
+        <ul className='links-contact'>
+          <li><a href="https://www.facebook.com/studiofotodawid/">
+            <i className="fab fa-facebook-square"></i>
+          </a></li>
+          <li><a href="https://www.instagram.com/fotodawid/">
+            <i className="fab fa-instagram"></i>
+          </a></li>
+          <li><a href="mailto:studio@fotodawid.eu">studio@fotodawid.eu</a></li>
+        </ul>
+        :
+        <ul className='links-contact'>
+          <li><a href="https://www.facebook.com/studiofotodawid/">
+            <i className="fab fa-facebook-square"></i>
+          </a></li>
+          <li><a href="mailto:studio@fotodawid.eu">studio@fotodawid.eu</a></li>
+          <li><a href="https://www.instagram.com/fotodawid/">
+            <i className="fab fa-instagram"></i>
+          </a></li>
+        </ul>
+
     return (
       <div id="map">
         <div className='container'>
@@ -25,18 +47,9 @@ export default class Contact extends React.Component {
               <li><a href="tel:501406293">501 406 293</a></li>
             </ul>
           </div>
-          <ul className='links-contact'>
-            <li><a href="https://www.instagram.com/fotodawid/">
-              <i className="fab fa-instagram"></i>
-            </a></li>
-            <li><a href="mailto:studio@fotodawid.eu">studio@fotodawid.eu</a></li>
-            <li><a href="https://www.facebook.com/studiofotodawid/">
-              <i className="fab fa-facebook-square"></i>
-            </a></li>
-          </ul>
+          {links}
         </div>
         <MapContainer />
-        {/* <footer>Wszelkie prawa zastrzeżone</footer> */}
       </div>
     )
   }
