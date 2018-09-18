@@ -750,6 +750,31 @@ nav a:hover {
 .links-contact li:nth-child(2):hover, .links-contact-mobile li:nth-child(3):hover {
   background-color: #db4d50;
 }
+.offerts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.offer {
+  min-width: 35%;
+  height: 350px;
+  border: 5px solid #db4d50;
+  background-color: #f59692;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offer h2 {
+  color: white;
+  font-size: 60px;
+}
+.offer:hover {
+  background-color: #f7b1af;
+  cursor: pointer;
+}
 .logo-mobile {
   width: 50%;
 }
