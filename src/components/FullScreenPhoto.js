@@ -15,8 +15,8 @@ export default class FullScreenPhoto extends React.Component {
     if (absX > 0 && !moveLeft) {
       this.setState({
         left: true
-      }, () => console.log('state L', this.state))
-      this.props.backPhoto();
+      })
+      this.props.prevPhoto();
     }
   }
   swipingRight = (e, absX) => {
@@ -24,26 +24,21 @@ export default class FullScreenPhoto extends React.Component {
     if (absX > 0 && !moveRight) {
       this.setState({
         right: true
-      }, () => console.log('state R', this.state))
+      })
       this.props.nextPhoto();
     }
   }
   swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-    console.log("You Swiped...", isFlick)
     if (!isFlick || isFlick) {
       this.setState({
         left: false,
         right: false
-      }, () => console.log('state', this.state))
+      })
     }
   }
   render() {
     const { fullPhoto } = this.props;
     let altText = fullPhoto.substring(0, 8);
-    const rightNext = window.innerWidth - 100;
-    const rightStyle = {
-      left: rightNext + 'px'
-    };
     const bigPicture =
       window.innerWidth > 1000
         ?
@@ -56,7 +51,7 @@ export default class FullScreenPhoto extends React.Component {
           </div>
           <div
             className='back-big'
-            onClick={() => this.props.backPhoto()}>
+            onClick={() => this.props.prevPhoto()}>
             <i className="fas fa-angle-double-left" ></i>
           </div>
           <div

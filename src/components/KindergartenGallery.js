@@ -4,7 +4,6 @@ import { menuUp } from './functions'
 import Gallery1 from './Gallery1';
 import Gallery2 from './Gallery2';
 
-
 export default class KindergartenGallery extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +26,7 @@ export default class KindergartenGallery extends React.Component {
   }
 
   render() {
+    const { fullPhoto } = this.props;
     const {
       titleKindergarten,
       photosKindergarten,
@@ -35,11 +35,20 @@ export default class KindergartenGallery extends React.Component {
     } = this.state;
     return (
       <div id='about-us-kindergarten-gallery'>
-        <Gallery1 photos={photosKindergarten} title={titleKindergarten} />
+        <Gallery1
+          photos={photosKindergarten}
+          title={titleKindergarten}
+          fullPhoto={fullPhoto}
+          showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
+        />
         <div className='line'></div>
-        <Gallery2 photos={photosKids} title={titleKids} />
-        <div className='panorama'></div>
-        <footer>Wszelkie prawa zastrzeżone</footer>
+        <Gallery2
+          photos={photosKids}
+          title={titleKids}
+          fullPhoto={fullPhoto}
+          showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
+        />
+        <footer className='footer-gallery'>Wszelkie prawa zastrzeżone</footer>
       </div>
     )
   }

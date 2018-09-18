@@ -3,8 +3,6 @@ import '../App.css';
 import { menuUp } from './functions';
 import Gallery1 from './Gallery1';
 import Gallery2 from './Gallery2';
-import FullScreenPhoto from './FullScreenPhoto'
-
 
 export default class StudioGallery extends React.Component {
   constructor(props) {
@@ -53,25 +51,23 @@ export default class StudioGallery extends React.Component {
           photos={photosStudio}
           title={titleStudio}
           fullPhoto={fullPhoto}
-          showPhoto={(photo) => this.props.showPhoto(photo)}
+          showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
         <div className='line'></div>
-        <Gallery2 
-        photos={photosOther} 
-        title={titleOther} 
-        fullPhoto={fullPhoto} 
-        showPhoto={(photo,all) => this.props.showPhoto(photo,all)}
+        <Gallery2
+          photos={photosOther}
+          title={titleOther}
+          fullPhoto={fullPhoto}
+          showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
         <div className='line'></div>
-        <Gallery1 
-        photos={photosSesion} 
-        title={titleSesion} 
-        fullPhoto={fullPhoto} 
-        showPhoto={(photo) => this.props.showPhoto(photo)}
+        <Gallery1
+          photos={photosSesion}
+          title={titleSesion}
+          fullPhoto={fullPhoto}
+          showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
-
-        <div className='panorama'></div>
-        <footer>Wszelkie prawa zastrzeżone</footer>
+        <footer className='footer-gallery'>Wszelkie prawa zastrzeżone</footer>
       </div>
     )
   }

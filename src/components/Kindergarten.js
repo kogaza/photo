@@ -6,12 +6,17 @@ import KindergartenGallery from './KindergartenGallery'
 import Contact from './Contact'
 import AboutUsKindergarten from './AboutUsKindergarten';
 import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
+import FullScreenPhoto from './FullScreenPhoto'
 
 class Kindergarten extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hamburger: true
+      hamburger: true,
+      fullScreenPhoto: false,
+      fullPhoto: 'studio04.jpg',
+      photos: [],
+      left: false
     }
   }
 
@@ -24,10 +29,41 @@ class Kindergarten extends React.Component {
 
   mobileMenu = (arg) => {
     let hamburger = this.state.hamburger;
-    console.log('arg',arg);
-    if(arg === 'kindergarten') menuUp("about-us-kindergarten");
+    if (arg === 'kindergarten') menuUp("about-us-kindergarten");
     this.setState({
       hamburger: !hamburger
+    })
+  }
+  showPhoto = (fullPhoto, photos) => {
+    this.setState({
+      fullScreenPhoto: true,
+      fullPhoto,
+      photos
+    })
+  }
+  hidePhoto = () => {
+    this.setState({
+      fullScreenPhoto: false
+    })
+  }
+  prevPhoto = () => {
+    let actualPhoto = this.state.fullPhoto;
+    let allPhotos = this.state.photos;
+    let actualId = allPhotos.indexOf(actualPhoto);
+    let newPhoto = 
+    actualId > 0 ? allPhotos[actualId-1] : allPhotos[allPhotos.length-1]
+    this.setState({
+      fullPhoto: newPhoto,
+    })
+  }
+  nextPhoto = () => {
+    let actualPhoto = this.state.fullPhoto;
+    let allPhotos = this.state.photos;
+    let actualId = allPhotos.indexOf(actualPhoto);
+    let newPhoto = 
+    actualId < allPhotos.length-1 ? allPhotos[actualId+1] : allPhotos[0]
+    this.setState({
+      fullPhoto: newPhoto,
     })
   }
 
@@ -59,8 +95,21 @@ class Kindergarten extends React.Component {
         <div className="show-burger" onClick={() => this.mobileMenu()}></div>
       </div>
     }
+    let fullPhoto =
+      this.state.fullScreenPhoto
+        ?
+        <FullScreenPhoto
+          fullPhoto={this.state.fullPhoto}
+          hidePhoto={() => this.hidePhoto()}
+          prevPhoto={() => this.prevPhoto()}
+          nextPhoto={() => this.nextPhoto()}
+        />
+        :
+        null;
+
     return (
       <div>
+        {fullPhoto}
         {burger}
         <div className="belt-logo-burger">
           <Link to="/"><div id="logo-portrait"></div></Link>
@@ -108,7 +157,11 @@ class Kindergarten extends React.Component {
           <Switch>
             <Route exact path="/kindergarten" component={AboutUsKindergarten} />
             <Route exact path="/kindergarten/offer" component={KindergartenOffer} />
-            <Route exact path="/kindergarten/gallery" component={KindergartenGallery} />
+            <Route exact path="/kindergarten/gallery" component={(props) =>
+              (<KindergartenGallery
+                fullPhoto={this.state.fullPhoto}
+                showPhoto={(photo, all) => this.showPhoto(photo, all)}
+                {...props} />)} />
             <Route exact path="/kindergarten/contact" component={Contact} />
           </Switch>
         </div>

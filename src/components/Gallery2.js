@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import Swipeable from 'react-swipeable'
+
 
 export default class Gallery2 extends React.Component {
   constructor(props) {
@@ -7,20 +9,15 @@ export default class Gallery2 extends React.Component {
     this.state = {
       title: '',
       photos: [],
-      visiblePhotos: [],
-      bigGallery: false,
-      bigPhotoId: ''
+      visiblePhotos: []
     }
   }
 
   componentDidMount() {
     const { photos, title } = this.props;
-    const bigGallery = window.innerWidth > 1000 ? false : true;
     this.setState({
       title,
-      photos,
-      bigGallery,
-      bigPhotoId: 0
+      photos
     });
     this.interval = setInterval(
       () => {
@@ -37,17 +34,46 @@ export default class Gallery2 extends React.Component {
     clearInterval(this.interval);
   }
 
-  showBigPhoto = (id) => {
-    this.setState({
-      bigGallery: true,
-      bigPhotoId: id
-    });
+  swipingLeft = (e, absX) => {
+    const moveLeft = this.state.left;
+    if (absX > 0 && !moveLeft) {
+      this.setState({
+        left: true
+      })
+      this.prevNextPhotoMobile('prev');
+    }
+  }
+  swipingRight = (e, absX) => {
+    const moveRight = this.state.right;
+    if (absX > 0 && !moveRight) {
+      this.setState({
+        right: true
+      })
+      this.prevNextPhotoMobile('next');
+    }
+  }
+  swiped = (e, deltaX, deltaY, isFlick, velocity) => {
+    if (!isFlick || isFlick) {
+      this.setState({
+        left: false,
+        right: false
+      })
+    }
   }
 
-  hideBigPhoto = () => {
-    this.setState({
-      bigGallery: false
-    })
+  prevNextPhotoMobile = (direction) => {
+    const { photos } = this.state;
+    switch (direction) {
+      case 'prev':
+        photos.push(photos.splice(0, 1)[0]);
+        break;
+      default:
+        let photosReverse = photos.reverse();
+        let moveElem = photosReverse.splice(0, 1)[0];
+        photosReverse.push(moveElem);
+        let newPhotos = photosReverse.reverse();
+        break;
+    }
   }
 
   prevNextPhoto = (direction) => {
@@ -67,7 +93,7 @@ export default class Gallery2 extends React.Component {
   }
 
   render() {
-    const { title, photos, bigGallery, bigPhotoId } = this.state;
+    const { title, photos } = this.state;
     const rightNext = window.innerWidth - 100;
     const rightStyle = {
       left: rightNext + 'px'
@@ -118,7 +144,13 @@ export default class Gallery2 extends React.Component {
         <div className='container'>
           <h1 className='title'> {title} </h1>
         </div>
-        {showGallery}
+        <Swipeable
+          onSwipingLeft={this.swipingLeft}
+          onSwipingRight={this.swipingRight}
+          onSwiped={this.swiped}
+        >
+          {showGallery}
+        </Swipeable>
       </div>
     )
   }

@@ -8,9 +8,7 @@ import Kindergarten from './Kindergarten'
 import Contact from './Contact'
 import AboutUsStudio from './AboutUsStudio'
 import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
-
 import FullScreenPhoto from './FullScreenPhoto'
-
 
 class Studio extends React.Component {
   constructor(props) {
@@ -33,14 +31,12 @@ class Studio extends React.Component {
 
   mobileMenu = (arg) => {
     let hamburger = this.state.hamburger;
-    console.log('arg', arg);
     if (arg === 'studio') menuUp("about-us-studio");
     this.setState({
       hamburger: !hamburger
     })
   }
   showPhoto = (fullPhoto, photos) => {
-    console.log('Studio back',fullPhoto, photos);
     this.setState({
       fullScreenPhoto: true,
       fullPhoto,
@@ -52,9 +48,8 @@ class Studio extends React.Component {
       fullScreenPhoto: false
     })
   }
-  backPhoto = () => {
+  prevPhoto = () => {
     let actualPhoto = this.state.fullPhoto;
-    console.log('actualPhoto',actualPhoto);
     let allPhotos = this.state.photos;
     let actualId = allPhotos.indexOf(actualPhoto);
     let newPhoto = 
@@ -65,17 +60,14 @@ class Studio extends React.Component {
   }
   nextPhoto = () => {
     let actualPhoto = this.state.fullPhoto;
-    console.log('actualPhoto',actualPhoto);
     let allPhotos = this.state.photos;
     let actualId = allPhotos.indexOf(actualPhoto);
-    console.log('actualId',actualId);
     let newPhoto = 
     actualId < allPhotos.length-1 ? allPhotos[actualId+1] : allPhotos[0]
     this.setState({
       fullPhoto: newPhoto,
     })
   }
-
 
   render() {
     let burger;
@@ -113,9 +105,8 @@ class Studio extends React.Component {
         ?
         <FullScreenPhoto 
         fullPhoto={this.state.fullPhoto}
-        // left={this.state.left} 
         hidePhoto={() => this.hidePhoto()}
-        backPhoto={() => this.backPhoto()}
+        prevPhoto={() => this.prevPhoto()}
         nextPhoto={() => this.nextPhoto()}
         />
         :
@@ -124,8 +115,6 @@ class Studio extends React.Component {
     return (
       <div>
         {fullPhoto}
-
-        {/* {fullPicture} */}
         {burger}
         <div className="belt-logo-burger">
           <Link to="/"><div id="logo-portrait"></div></Link>
