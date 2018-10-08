@@ -44,9 +44,9 @@ export default class Contact extends React.Component {
           <h1 className='title'>Studio Foto Dawid</h1>
           <h2>43-100 Tychy, Plac Świętej Anny 2 </h2>
           <div className='phones-container'>
-            <div className='phone-icon'>
+            {/* <div className='phone-icon'>
               <img src={'/gallery/telephone.svg'} alt='telephone'></img>
-            </div>
+            </div> */}
             <ul className='phones-contact'>
               <li><a href="tel:509529819">509 529 819</a></li>
               <li className='tel-office'><a href="tel:322274942">32 227 49 42</a></li>

@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 import { menuUp } from './functions'
+import PdfRodzinna from '../offers/rodzinna.pdf';
+import PdfCiazowa from '../offers/ciazowa.pdf';
 
 export default class StudioOffer extends React.Component {
 
@@ -11,13 +13,13 @@ export default class StudioOffer extends React.Component {
   render() {
     return (
       <div id="about-us-studio-offer">
-        <h1 className="loremH1">Oferta Studia działa</h1>
+        <h1 className="loremH1">Oferta studyjna</h1>
         <div className='offerts'>
-          <div className='offer'>
-            <h2>Oferta 1</h2>
+          <div className='offer family'>
+            <a href={PdfRodzinna} target='_black'>Fotografia rodzinna</a>
           </div>
           <div className='offer'>
-            <h2>Oferta 2</h2>
+            <a href={PdfCiazowa} target='_black'>Sesje brzuszkowe</a>
           </div>
           <div className='offer'>
             <h2>Oferta 3</h2>
