@@ -405,8 +405,8 @@ nav a:hover {
   transition: 0.3s;
 }
 .back-big, .next-big {
-  opacity: 0.3;
-  padding: 0 30px;
+  opacity: 0.8;
+  padding: 0 50px;
 }
 .back, .next {
   position: absolute;
@@ -800,7 +800,8 @@ nav a:hover {
 .family {
   background-image: url('./images/studio2.jpg');
   background-size: cover;
-
+  background-position-x: center;
+  background-position-y: center;
 }
 .logo-mobile {
   width: 50%;

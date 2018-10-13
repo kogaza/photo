@@ -48,6 +48,7 @@ class Studio extends React.Component {
       fullScreenPhoto: false
     })
   }
+
   prevPhoto = () => {
     let actualPhoto = this.state.fullPhoto;
     let allPhotos = this.state.photos;
