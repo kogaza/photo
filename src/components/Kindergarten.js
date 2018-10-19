@@ -4,7 +4,7 @@ import '../App.css';
 import KindergartenOffer from './KindergartenOffer'
 import KindergartenGallery from './KindergartenGallery'
 import Contact from './Contact'
-import AboutUsKindergarten from './AboutUsKindergarten';
+import KindergartenAboutUs from './KindergartenAboutUs';
 import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
 import FullScreenPhoto from './FullScreenPhoto'
 
@@ -155,7 +155,7 @@ class Kindergarten extends React.Component {
         </div>
         <div className="back-color">
           <Switch>
-            <Route exact path="/kindergarten" component={AboutUsKindergarten} />
+            <Route exact path="/kindergarten" component={KindergartenAboutUs} />
             <Route exact path="/kindergarten/offer" component={KindergartenOffer} />
             <Route exact path="/kindergarten/gallery" component={(props) =>
               (<KindergartenGallery

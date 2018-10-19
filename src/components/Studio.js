@@ -6,7 +6,7 @@ import StudioGallery from './StudioGallery'
 import StudioClient from './StudioClient'
 import Kindergarten from './Kindergarten'
 import Contact from './Contact'
-import AboutUsStudio from './AboutUsStudio'
+import StudioAboutUs from './StudioAboutUs'
 import { menuUp, showElement, hideElement, startScrolling, stopScrolling } from './functions'
 import FullScreenPhoto from './FullScreenPhoto'
 
@@ -189,7 +189,7 @@ class Studio extends React.Component {
         </div>
         <div className="back-color">
           <Switch>
-            <Route exact path="/studio" component={AboutUsStudio} />
+            <Route exact path="/studio" component={StudioAboutUs} />
             <Route exact path="/studio/offer" component={StudioOffer} />  
             <Route exact path="/studio/gallery" component={(props) => 
               (<StudioGallery 

@@ -224,8 +224,9 @@ nav a:hover {
   text-align: justify;
 }
 .title {
-  font-size: 60px;
-  padding: 80px;
+  font-size: 40px;
+  padding: 60px;
+  padding-top: 100px;
   text-align: center;
 }
 #about-us-studio h2, #about-us-kindergarten h2 {
@@ -240,7 +241,7 @@ nav a:hover {
   text-align: center;
   padding-bottom: 40px;
 }
-#about-us-studio p, #about-us-kindergarten p {
+#about-us-studio p, #about-us-kindergarten p, #about-us-studio-offer p {
   font-size: 28px;
   line-height: 35px;
   padding: 20px 10px;
@@ -669,6 +670,8 @@ nav a:hover {
 }
 #map {
   font-family: 'Josefin Sans', sans-serif;
+}
+#map h2 {
   color: #969da1;
 }
 #map h1, h2, li {
@@ -751,14 +754,17 @@ nav a:hover {
 .links-contact li:nth-child(2):hover, .links-contact-mobile li:nth-child(3):hover {
   background-color: #db4d50;
 }
+.offersContainer {
+  display: flex;
+  flex-direction: column;
+}
 .offerts {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
 }
 .offer {
-  min-width: 35%;
+  width: 500px;
   height: 350px;
   background-color: #f59692;
   border-radius: 10px;
@@ -766,6 +772,9 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
 }
 .offer a {
   border-radius: 10px;
@@ -798,10 +807,28 @@ nav a:hover {
   cursor: pointer;
 }
 .family {
-  background-image: url('./images/studio2.jpg');
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
+  background-image: url('./images/family.jpg');
+}
+.tummy {
+  background-image: url('./images/tummy.jpg');
+}
+.baby {
+  background-image: url('./images/baby.jpg');
+}
+.children {
+  background-image: url('./images/children.jpg');
+}
+.commercial {
+  background-image: url('./images/commercial.jpg');
+}
+.openAir {
+  background-image: url('./images/openAir.jpg');
+}
+.professional {
+  background-image: url('./images/professional.jpg');
+}
+.communion {
+  background-image: url('./images/communion.jpg');
 }
 .logo-mobile {
   width: 50%;
@@ -911,7 +938,7 @@ footer {
   #logo {
     transform: translateY(-5px);
   }
-  #about-us-studio p, #about-us-kindergarten p {
+  #about-us-studio p, #about-us-kindergarten p, #about-us-studio-offer p {
     margin: auto 10px;
     font-size: 16px;
     line-height: 16px;
@@ -1011,6 +1038,13 @@ footer {
     background-image: url("./images/panoramaMedium.jpg");
     height: 300px;
   }
+  .offer {
+    width: 400px;
+    height: 250px;
+  }
+  .offer a {
+    font-size: 40px;
+  }
 }
 /* --------------------------------------------------------- width 1000px  */
 @media screen and (max-width: 1000px) {
@@ -1067,6 +1101,7 @@ footer {
     position: relative;
     width: 100%;
   }
+
 }
 /* --------------------------------------------------------- width 900px  */
 @media screen and (max-width: 900px){
@@ -1110,6 +1145,13 @@ footer {
   }
   .phone-icon img {
     height: 120px;;
+  }
+  .offer {
+    width: 250px;
+    height: 150px;
+  }
+  .offer a {
+    font-size: 20px;
   }
 }
 /* --------------------------------------------------------- width 600px  */
@@ -1245,7 +1287,7 @@ footer {
   .option:nth-child(2) {
     background-image: url('./images/homeKindergartenLarge.jpg');
   }
-  #about-us-studio p, #about-us-kindergarten p {
+  #about-us-studio p, #about-us-kindergarten p, #about-us-studio-offer p {
     font-size: 16px;
     padding: 10px;
     line-height: 20px;
@@ -1362,6 +1404,27 @@ footer {
   }
 
 }
+/* --------------------------------------------------------- width 900px portrait  */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .offerts {
+    flex-direction: column;
+  }
+  .offer {
+    width: 700px;
+    height: 500px;
+    margin: 0;
+    border-radius: 0;
+    align-items: flex-end;
+  }
+  .offer a {
+    opacity: 1;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 60px;
+    border-radius: 0;
+    color: white;
+  }
+}
 /* --------------------------------------------------------- width 600px portrait  */
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .option:nth-child(1) {
@@ -1398,7 +1461,7 @@ footer {
     background-position-y: center;
     background-position-x: center;
   }
-  #about-us-studio p, #about-us-kindergarten p {
+  #about-us-studio p, #about-us-kindergarten p, #about-us-studio-offer p {
     font-size: 16px;
     padding: 10px;
     line-height: 20px;
@@ -1491,6 +1554,10 @@ footer {
      margin-bottom: 20px;
      width: 100%;
   }
+  .offer {
+    width: 100%;
+    height: 50vh;
+  }
 }
 /* --------------------------------------------------------- width 350px portrait  */
 @media screen and (max-width: 350px) and (orientation: portrait) {
@@ -1559,6 +1626,9 @@ footer {
   }
   .phones-contact a {
     font-size: 20px;
+  }
+  .offer a {
+    font-size: 36px;
   }
 }
 
