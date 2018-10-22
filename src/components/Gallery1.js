@@ -97,7 +97,6 @@ export default class Gallery1 extends React.Component {
         let photosReverse = photos.reverse();
         let moveElem = photosReverse.splice(0, 1)[0];
         photosReverse.push(moveElem);
-        let newPhotos = photosReverse.reverse();
         break;
     }
   }

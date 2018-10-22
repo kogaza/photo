@@ -51,6 +51,7 @@ export default class StudioOffer extends React.Component {
             </div>
           </div>
         </div>
+        <div className='descriptionOfferContainer'>
         <div className='descriptionOffer'>
           <div className='studioAll'>
           <img 
@@ -87,6 +88,7 @@ export default class StudioOffer extends React.Component {
               43-100 Tychy
             </p>
           </div>
+        </div>
         </div>
         <footer>Wszelkie prawa zastrzeżone</footer>
 
