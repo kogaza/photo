@@ -3,10 +3,11 @@
   padding: 0;
 }
 body, html {
-  font-family: 'Caveat', cursive;  
+  font-family: 'Caveat', cursive; 
+  color: grey;
 }
 p, h1, footer {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Niramit', sans-serif;
   text-align: center;
 }
 .lorem {
@@ -78,7 +79,7 @@ p, h1, footer {
   align-items: flex-start;
   justify-content: flex-end;
   right: 0;
-  color: rgba(219, 77, 80, 0);;
+  color: rgba(219, 77, 80, 0);
 }
 .h1-photo h1 {
   font-family: 'Poiret One', cursive;
@@ -228,6 +229,7 @@ nav a:hover {
   padding: 60px;
   padding-top: 100px;
   text-align: center;
+  color: #ff7b7d;
 }
 #about-us-studio h2, #about-us-kindergarten h2 {
   /* letter-spacing: 3px; */
@@ -669,8 +671,7 @@ nav a:hover {
   margin: 0 auto;
 }
 #map {
-  font-family: 'Josefin Sans', sans-serif;
-}
+  font-family: 'Niramit', sans-serif;}
 #map h2 {
   color: #969da1;
 }
@@ -764,11 +765,11 @@ nav a:hover {
   justify-content: center;
 }
 .offer {
-  width: 500px;
-  height: 350px;
+  width: 24%;
+  height: 300px;
   background-color: #f59692;
   border-radius: 10px;
-  margin: 5px;
+  margin: 0.2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -788,7 +789,7 @@ nav a:hover {
   font-weight: bold;
   color: black;
   background-color: rgba(255, 255, 255, 0.2);
-  opacity: 0.1;
+  opacity: 0;
   transition: 0.5s;  
 }
 .offer a:hover {
@@ -805,6 +806,13 @@ nav a:hover {
 .offer:hover {
   background-color: #f7b1af;
   cursor: pointer;
+}
+.descriptionOffer {
+  background-color: #d6dde0;
+  border-radius: 10px;
+  width: 97%;
+  margin: 20px auto;
+  display: flex;
 }
 .family {
   background-image: url('./images/family.jpg');
@@ -829,6 +837,26 @@ nav a:hover {
 }
 .communion {
   background-image: url('./images/communion.jpg');
+}
+.studioAll {
+  /* background-image: url('./images/studioAll1Big.jpg'); */
+  flex: 2;
+  padding: 50px;
+}
+.textsAll {
+  flex: 3;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.textsAll p{
+  text-align: left;
+}
+.descriptionReservation, .descriptionReservation a {
+  color: #ff7b7d;
+  text-decoration: none;
+  padding: 0;
 }
 .logo-mobile {
   width: 50%;
@@ -911,6 +939,12 @@ footer {
   }
   .icon-photo:last-child {
     left: 483px;
+  }
+  #about-us-studio p, #about-us-kindergarten p, #about-us-studio-offer p {
+    margin: auto 10px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px;
   }
 }
 /* --------------------------------------------------------- width 1250px  */
@@ -1032,7 +1066,7 @@ footer {
     color: white;
   }
   .h1-photo:nth-child(2) h1 {
-    color: black;
+    color: rgb(219, 77, 80);
   }
   .panorama {
     background-image: url("./images/panoramaMedium.jpg");
@@ -1149,9 +1183,17 @@ footer {
   .offer {
     width: 250px;
     height: 150px;
+    align-items: flex-end;
+    margin: 0;
+    border-radius: 0;
   }
   .offer a {
-    font-size: 20px;
+    opacity: 1;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50px;
+    border-radius: 0;
+    color: white;
   }
 }
 /* --------------------------------------------------------- width 600px  */
@@ -1274,7 +1316,7 @@ footer {
     color: white;
   }
   .h1-photo:nth-child(2) h1 {
-    color: black;
+    color: rgb(219, 77, 80);
   }
   .option {
     width: 100vw;
@@ -1402,16 +1444,12 @@ footer {
   #map li {
     font-size: 35px;
   }
-
-}
-/* --------------------------------------------------------- width 900px portrait  */
-@media screen and (max-width: 900px) and (orientation: portrait) {
   .offerts {
     flex-direction: column;
   }
   .offer {
-    width: 700px;
-    height: 500px;
+    width: 100%;
+    height: 50vh;
     margin: 0;
     border-radius: 0;
     align-items: flex-end;
@@ -1553,10 +1591,6 @@ footer {
   .phones-container {
      margin-bottom: 20px;
      width: 100%;
-  }
-  .offer {
-    width: 100%;
-    height: 50vh;
   }
 }
 /* --------------------------------------------------------- width 350px portrait  */
