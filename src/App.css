@@ -229,7 +229,7 @@ nav a:hover {
   padding: 60px;
   padding-top: 100px;
   text-align: center;
-  color: #ff7b7d;
+  color: #f59692;
 }
 #about-us-studio h2, #about-us-kindergarten h2 {
   font-size: 28px;
@@ -705,7 +705,7 @@ nav a:hover {
 }
 .phones-contact a {
   text-decoration: none;
-  color: #db4d50;
+  color: #f59692;
 }
 .links-contact {
   flex-direction: row;
@@ -770,8 +770,10 @@ nav a:hover {
   background-position-y: center;
 }
 .offer-kindergarten {
-  width: 600px;
+  width: 33.3%;
   height: 300px;
+  border-radius: 0;
+  margin: 0;
 }
 .offer a {
   text-align: center;
@@ -789,10 +791,13 @@ nav a:hover {
   opacity: 0;
   transition: 0.5s;  
 }
+.offer-kindergarten a {
+  border-radius: 0;
+}
 .offer a:hover {
   opacity: 0.8;
   color: white;
-  transform: scale(1.01);
+  /* transform: scale(1.01); */
   background-color: rgba(0, 0, 0, 0.6);
   transition: 0.5s;
 }
@@ -811,6 +816,7 @@ nav a:hover {
   margin: 20px auto;
   display: flex;
   justify-content: center; 
+  padding: 5px;
 }
 .descriptionOffer {
   max-width: 1400px;
@@ -852,6 +858,12 @@ nav a:hover {
 }
 .tablo {
   background-image: url('./images/kindergarten_offer/tablo.jpg');
+}
+.calendar {
+  background-image: url('./images/kindergarten_offer/calendar.jpg');
+}
+.holidays {
+  background-image: url('./images/kindergarten_offer/holidays.jpg');
 }
 .studioAll {
   flex: 2;
@@ -918,10 +930,12 @@ nav a:hover {
   color: #f59692; 
 }
 footer {
-  padding: 20px 0;
+  padding: 10px 0;
+  background-color: #d6dde0;
 }
-.footer-gallery {
-  padding-top: 0;
+footer a {
+  color: #f59692;
+  text-decoration: none;
 }
 /* --------------------------------------------------------- width 1400px  */
 @media screen and (max-width: 1400px){
@@ -938,6 +952,9 @@ footer {
   }
   .offer a {
     font-size: 30px;
+  }
+  .offer-kindergarten {
+    height: 250px;
   }
   .photo-box-gallery {
     width: 977px;
@@ -1024,6 +1041,9 @@ footer {
   }
   .exit-button-container {
     display: none;
+  }
+  .offer-kindergarten {
+    height: 200px;
   }
 }
 /* --------------------------------------------------------- width 1150px  */
@@ -1150,7 +1170,9 @@ footer {
     position: relative;
     width: 100%;
   }
-
+  .offer-kindergarten {
+    height: 150px;
+  }
 }
 /* --------------------------------------------------------- width 900px  */
 @media screen and (max-width: 900px){
@@ -1481,6 +1503,9 @@ footer {
     height: 60px;
     border-radius: 0;
     color: white;
+  }
+  .offer-kindergarten {
+    height: 33vh;
   }
   .studioAll {
     display: none;

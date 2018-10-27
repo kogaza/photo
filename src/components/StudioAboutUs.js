@@ -41,7 +41,6 @@ export default class StudioAboutUs extends React.Component {
       <p> Zapraszamy do zapoznania się z naszą ofertą.</p>
     </div>
     <div className='panorama'></div>
-    <footer>Wszelkie prawa zastrzeżone</footer>
   </div>
  )
 }

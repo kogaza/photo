@@ -90,8 +90,6 @@ export default class StudioOffer extends React.Component {
           </div>
         </div>
         </div>
-        <footer>Wszelkie prawa zastrzeżone</footer>
-
       </div >
     )
   }

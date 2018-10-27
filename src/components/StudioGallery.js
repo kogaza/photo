@@ -67,7 +67,6 @@ export default class StudioGallery extends React.Component {
           fullPhoto={fullPhoto}
           showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
-        <footer className='footer-gallery'>Wszelkie prawa zastrzeżone</footer>
       </div>
     )
   }

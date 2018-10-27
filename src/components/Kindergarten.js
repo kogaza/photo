@@ -112,8 +112,8 @@ class Kindergarten extends React.Component {
         {fullPhoto}
         {burger}
         <div className="belt-logo-burger">
-          {/* <Link to="/"><div id="logo-portrait"></div></Link> */}
-          <Link to="/photo/"><div id="logo-portrait"></div></Link>
+          <Link to="/"><div id="logo-portrait"></div></Link>
+          {/* <Link to="/photo/"><div id="logo-portrait"></div></Link> */}
         </div>
         <div id="banner-kindergarten" className="banner-container">
           <div className="banner banner-kindergarten"></div>
@@ -121,8 +121,8 @@ class Kindergarten extends React.Component {
         <div className="belt-nav">
           <div className="container">
             <nav>
-              {/* <Link to="/"><div id="logo"></div></Link> */}
-              <Link to="/photo/"><div id="logo"></div></Link>
+              <Link to="/"><div id="logo"></div></Link>
+              {/* <Link to="/photo/"><div id="logo"></div></Link> */}
               <ul>
                 <li onClick={() => menuUp('about-us-kindergarten')}>
                   <Link to="/kindergarten"> O nas </Link>
@@ -165,6 +165,7 @@ class Kindergarten extends React.Component {
             <Route exact path="/kindergarten/contact" component={Contact} />
           </Switch>
         </div>
+        <footer>Copyright © 2018 <a href='https://kogaza.pl'> Krzysztof Ogaza </a> wszelkie prawa zastrzeżone</footer>
       </div>
     )
   }

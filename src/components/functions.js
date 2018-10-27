@@ -56,7 +56,7 @@ export const showElement = () => {
   const showText = document.querySelector('.show-text');
   showText.style.width = '160px';
   showText.style.transform = 'translateX(0) rotate(0) scale(1)';
-  showText.style.color = 'rgb(0, 146, 204)';
+  showText.style.color = '#f59692';
 }
 
 export const hideElement = () => {

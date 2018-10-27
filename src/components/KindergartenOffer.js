@@ -5,35 +5,48 @@ import { menuUp } from './functions'
 // import wiosna from '../offers/wiosna.pdf';
 // import karnawal from '../offers/karnawal.pdf';
 // import tablo from '../offers/tablo.pdf';
+// import swieta from '../offers/swieta.pdf';
+// import kalendarz from '../offers/kalendarz.pdf';
 
 export default class KindergartenOffer extends React.Component {
 
   componentDidMount() {
-    menuUp("about-us-studio-offer");
+    menuUp("about-us-kindergarten-offer");
+  }
+  offertAlert = () => {
+    alert('Oferta w przygotowaniu');
   }
 
   render() {
     return (
-      <div id="about-us-studio-offer">
+      <div id="about-us-kindergarten-offer">
         <h1 className="title">Oferta przedszkolna</h1>
         <div className='offersContainer'>
           <div className='offerts'>
-            <div className='offer offer-kindergarten autumn'>
-              <a href='' target='_black'>Sesje jesienne</a>
+            <div onClick={this.offertAlert} className='offer offer-kindergarten autumn'>
+              <a target='_black'>Sesje jesienne</a>
               {/* <a href={jesien} target='_black'>Sesje jesienne</a> */}
             </div>
-            <div className='offer offer-kindergarten spring'>
-              <a href='' target='_black'>Sesje wiosenne</a>
-              {/* <a href={wiosna} target='_black'>Sesje wiosenne</a> */}
+            <div onClick={this.offertAlert} className='offer offer-kindergarten calendar'>
+              <a target='_black'>Kalendarze</a>
+              {/* <a href={kalendarz} target='_black'>Kalendarze</a> */}
+            </div>
+            <div onClick={this.offertAlert} className='offer offer-kindergarten holidays'>
+              <a target='_black'>Sesje świąteczne</a>
+              {/* <a href={swieta} target='_black'>Sesje świąteczne</a> */}
             </div>
           </div>
           <div className='offerts'>
-            <div className='offer offer-kindergarten carnival'>
-              <a href='' target='_black'>Sesje karnawałowe</a>
+            <div onClick={this.offertAlert} className='offer offer-kindergarten carnival'>
+              <a target='_black'>Sesje karnawałowe</a>
               {/* <a href={karnawal} target='_black'>Sesje karnawałowe</a> */}
             </div>
-            <div className='offer offer-kindergarten tablo'>
-              <a href='' target='_black'>Sesje tablo</a>
+            <div onClick={this.offertAlert} className='offer offer-kindergarten spring'>
+              <a target='_black'>Sesje wiosenne</a>
+              {/* <a href={wiosna} target='_black'>Sesje wiosenne</a> */}
+            </div>
+            <div onClick={this.offertAlert} className='offer offer-kindergarten tablo'>
+              <a target='_black'>Sesje tablo</a>
               {/* <a href={tablo} target='_black'>Sesje tablo</a> */}
             </div>
           </div>
@@ -41,8 +54,6 @@ export default class KindergartenOffer extends React.Component {
         <div className='descriptionOfferContainer'>
           <p>Szczegółowe oferty w przygotowaniu</p>
         </div>
-        <footer>Wszelkie prawa zastrzeżone</footer>
-
       </div >
     )
   }

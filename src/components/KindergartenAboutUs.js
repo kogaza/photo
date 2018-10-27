@@ -26,7 +26,6 @@ const KindergartenAboutUs = () => (
         Działamy na terenie całego śląska. </p>
     </div>
     <div className='panorama'></div>
-    <footer>Wszelkie prawa zastrzeżone</footer>
   </div>
 );
 

@@ -11,7 +11,7 @@ export default class KindergartenGallery extends React.Component {
       titleKindergarten: 'Nasze sesje przedszkolne',
       photosKindergarten: [
         'kindergarten01.jpg', 'kindergarten02.jpg', 'kindergarten03.jpg',
-        'kindergarten04.jpg', 'kindergarten05.jpg', 'kindergarten06.jpg'
+        'kindergarten04.jpg', 'kindergarten03.jpg', 'kindergarten06.jpg'
       ],
       titleKids: 'Zdjęcia dzieci',
       photosKids: [
@@ -48,7 +48,6 @@ export default class KindergartenGallery extends React.Component {
           fullPhoto={fullPhoto}
           showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
-        <footer className='footer-gallery'>Wszelkie prawa zastrzeżone</footer>
       </div>
     )
   }
