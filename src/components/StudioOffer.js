@@ -22,34 +22,30 @@ export default class StudioOffer extends React.Component {
       <div id="about-us-studio-offer">
         <h1 className="title">Oferta studyjna</h1>
         <div className='offersContainer'>
-          <div className='offerts'>
             <div className='offer family'>
               <a href={rodzinne} target='_black'>Sesje rodzinne</a>
             </div>
-            <div className='offer children'>
+            <div className='offer offer-margin-LR children'>
               <a href={dzieciece} target='_black'>Sesje dziecięce</a>
             </div>
-            <div className='offer professional'>
+            <div className='offer offer-margin-R professional'>
               <a href={wizerunkowe} target='_black'>Sesje wizerunkowe</a>
             </div>
             <div className='offer baby'>
               <a href={noworodkowe} target='_black'>Sesje noworodkowe</a>
             </div>
-          </div>
-          <div className='offerts'>
             <div className='offer openAir'>
               <a href={plenerowe} target='_black'>Sesje plenerowe</a>
             </div>
-            <div className='offer tummy'>
+            <div className='offer offer-margin-LR tummy'>
               <a href={brzuszkowe} target='_black'>Sesje brzuszkowe</a>
             </div>
-            <div className='offer communion'>
+            <div className='offer offer-margin-R communion'>
               <a href={komunijne} target='_black'>Sesje komunijne</a>
             </div>
             <div className='offer commercial'>
               <a href={komercyjne} target='_black'>Sesje komercyjne</a>
             </div>
-          </div>
         </div>
         <div className='descriptionOfferContainer'>
         <div className='descriptionOffer'>
