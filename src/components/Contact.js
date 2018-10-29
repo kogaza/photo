@@ -58,8 +58,6 @@ export default class Contact extends React.Component {
             </img>
           </a>
         </div>
-        <footer>Copyright © 2018 <a href='https://kogaza.pl' > Krzysztof Ogaza </a> wszelkie prawa zastrzeżone</footer>
-
       </div>
     )
   }
