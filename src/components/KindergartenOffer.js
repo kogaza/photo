@@ -23,28 +23,28 @@ export default class KindergartenOffer extends React.Component {
         <h1 className="title">Oferta przedszkolna</h1>
         <div className='offersContainer'>
           <div onClick={this.offertAlert} className='offer offer-kindergarten autumn'>
-            <a target='_black'>Sesje jesienne</a>
-            {/* <a href={jesien} target='_black'>Sesje jesienne</a> */}
+            <a>Sesje jesienne</a>
+            {/* <a href={jesien}>Sesje jesienne</a> */}
           </div>
           <div onClick={this.offertAlert} className='offer offer-kindergarten offer-margin calendar'>
-            <a target='_black'>Kalendarze</a>
-            {/* <a href={kalendarz} target='_black'>Kalendarze</a> */}
+            <a>Kalendarze</a>
+            {/* <a href={kalendarz}>Kalendarze</a> */}
           </div>
           <div onClick={this.offertAlert} className='offer offer-kindergarten holidays'>
-            <a target='_black'>Sesje świąteczne</a>
-            {/* <a href={swieta} target='_black'>Sesje świąteczne</a> */}
+            <a>Sesje świąteczne</a>
+            {/* <a href={swieta}>Sesje świąteczne</a> */}
           </div>
           <div onClick={this.offertAlert} className='offer offer-kindergarten carnival'>
-            <a target='_black'>Sesje karnawałowe</a>
-            {/* <a href={karnawal} target='_black'>Sesje karnawałowe</a> */}
+            <a>Sesje karnawałowe</a>
+            {/* <a href={karnawal}>Sesje karnawałowe</a> */}
           </div>
           <div onClick={this.offertAlert} className='offer offer-kindergarten offer-margin spring'>
-            <a target='_black'>Sesje wiosenne</a>
-            {/* <a href={wiosna} target='_black'>Sesje wiosenne</a> */}
+            <a>Sesje wiosenne</a>
+            {/* <a href={wiosna}>Sesje wiosenne</a> */}
           </div>
           <div onClick={this.offertAlert} className='offer offer-kindergarten tablo'>
-            <a target='_black'>Sesje tablo</a>
-            {/* <a href={tablo} target='_black'>Sesje tablo</a> */}
+            <a>Sesje tablo</a>
+            {/* <a href={tablo}>Sesje tablo</a> */}
           </div>
         </div>
         <div className='descriptionOfferContainer'>

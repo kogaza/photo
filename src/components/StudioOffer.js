@@ -23,28 +23,28 @@ export default class StudioOffer extends React.Component {
         <h1 className="title">Oferta studyjna</h1>
         <div className='offersContainer'>
             <div className='offer family'>
-              <a href={rodzinne} target='_black'>Sesje rodzinne</a>
+              <a href={rodzinne}>Sesje rodzinne</a>
             </div>
             <div className='offer offer-margin-LR children'>
-              <a href={dzieciece} target='_black'>Sesje dziecięce</a>
+              <a href={dzieciece}>Sesje dziecięce</a>
             </div>
             <div className='offer offer-margin-R professional'>
-              <a href={wizerunkowe} target='_black'>Sesje wizerunkowe</a>
+              <a href={wizerunkowe}>Sesje wizerunkowe</a>
             </div>
             <div className='offer baby'>
-              <a href={noworodkowe} target='_black'>Sesje noworodkowe</a>
+              <a href={noworodkowe}>Sesje noworodkowe</a>
             </div>
             <div className='offer openAir'>
-              <a href={plenerowe} target='_black'>Sesje plenerowe</a>
+              <a href={plenerowe}>Sesje plenerowe</a>
             </div>
             <div className='offer offer-margin-LR tummy'>
-              <a href={brzuszkowe} target='_black'>Sesje brzuszkowe</a>
+              <a href={brzuszkowe}>Sesje brzuszkowe</a>
             </div>
             <div className='offer offer-margin-R communion'>
-              <a href={komunijne} target='_black'>Sesje komunijne</a>
+              <a href={komunijne}>Sesje komunijne</a>
             </div>
             <div className='offer commercial'>
-              <a href={komercyjne} target='_black'>Sesje komercyjne</a>
+              <a href={komercyjne}>Sesje komercyjne</a>
             </div>
         </div>
         <div className='descriptionOfferContainer'>
