@@ -3,13 +3,14 @@ import '../App.css';
 import Swipeable from 'react-swipeable'
 
 
-export default class Gallery2 extends React.Component {
+export default class GalleryMixed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
       photos: [],
-      visiblePhotos: []
+      visiblePhotos: [],
+      firstHorizontal: true
     }
   }
 
@@ -21,10 +22,12 @@ export default class Gallery2 extends React.Component {
     });
     this.interval = setInterval(
       () => {
+        const { firstHorizontal } = this.state;
         photos.push(photos.splice(0, 1)[0]);
         return (
           this.setState({
-            photos
+            photos,
+            firstHorizontal: !firstHorizontal 
           })
         )
       }, 20000
@@ -62,7 +65,7 @@ export default class Gallery2 extends React.Component {
   }
 
   prevNextPhotoMobile = (direction) => {
-    const { photos } = this.state;
+    const { photos, firstHorizontal } = this.state;
     switch (direction) {
       case 'prev':
         photos.push(photos.splice(0, 1)[0]);
@@ -73,37 +76,47 @@ export default class Gallery2 extends React.Component {
         photosReverse.push(moveElem);
         break;
     }
+    this.setState({
+      firstHorizontal: !firstHorizontal 
+    })
   }
 
   prevNextPhoto = (direction) => {
-    const { photos } = this.state;
+    const { photos, firstHorizontal } = this.state;
     switch (direction) {
       case 'prev':
-        photos.push(photos.reverse().splice(0, 1)[0]);
-        photos.reverse();
-        break;
+      photos.push(photos.reverse().splice(0, 1)[0]);
+      photos.reverse();
+      break;
       default:
-        photos.push(photos.splice(0, 1)[0]);
-        break;
+      photos.push(photos.splice(0, 1)[0]);
+      break;
     }
     this.setState({
-      photos
+      photos,
+      firstHorizontal: !firstHorizontal 
     })
   }
 
   render() {
-    const { title, photos } = this.state;
+    const { title, photos, firstHorizontal } = this.state;
+    let first = firstHorizontal;
     const rightNext = window.innerWidth - 100;
     const rightStyle = {
       left: rightNext + 'px'
     };
-    const numbersOfPhotos = 
-    window.innerWidth > 1000 ? 4 : 2;
+    const numbersOfPhotos =
+      window.innerWidth > 1000 ? 4 : 2;
     const photoList = photos.filter((v, i) => i < numbersOfPhotos).map((p, i) => {
       let dataId = p.substring(8, 6);
       let altText = p.substring(0, 8);
+      let mixedClass = first ?
+        "photo-mixed-horizontal photo-horizontal"
+        :
+        "photo-mixed-vertical photo-horizontal";
+      first = !first;
       return (
-        <div className="photo-horizontal" data-id={dataId} key={i}>
+        <div className={mixedClass} data-id={dataId} key={i}>
           <img
             onClick={() => this.props.showPhoto(p, photos)}
             src={`/gallery/${p}`} alt={altText}
@@ -112,31 +125,31 @@ export default class Gallery2 extends React.Component {
       )
     })
     const showGallery =
-    window.innerWidth > 1000
-    ?
-      <div className='photo-box-gallery-horizontal'>
-        <div className='photo-box-row'>
-          {photoList}
+      window.innerWidth > 1000
+        ?
+        <div className='photo-box-gallery-horizontal'>
+          <div className='photo-box-row'>
+            {photoList}
+          </div>
+          <div
+            className='back'
+            onClick={() => this.prevNextPhoto('prev')}>
+            <i className="fas fa-angle-double-left" ></i>
+          </div>
+          <div
+            className='next'
+            style={rightStyle}
+            onClick={() => this.prevNextPhoto('next')
+            }>
+            <i className="fas fa-angle-double-right" ></i>
+          </div>
         </div>
-        <div
-          className='back'
-          onClick={() => this.prevNextPhoto('prev')}>
-          <i className="fas fa-angle-double-left" ></i>
+        :
+        <div className='photo-box-gallery-horizontal'>
+          <div className='photo-box-row'>
+            {photoList}
+          </div>
         </div>
-        <div
-          className='next'
-          style={rightStyle}
-          onClick={() => this.prevNextPhoto('next')
-          }>
-          <i className="fas fa-angle-double-right" ></i>
-        </div>
-      </div>
-      :
-      <div className='photo-box-gallery-horizontal'>
-        <div className='photo-box-row'>
-          {photoList}
-        </div>
-      </div>
 
     return (
       <div >

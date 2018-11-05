@@ -329,6 +329,12 @@ nav a:hover {
   overflow: hidden;
   flex: 1;
 }
+.photo-mixed-horizontal {
+  flex: 2;
+}
+.photo-mixed-vertical {
+  flex: 1;
+}
 .photo-horizontal img {
   width: 100%;
   height: 100%;
@@ -1640,6 +1646,9 @@ footer a {
      margin-bottom: 20px;
      width: 100%;
   }
+  footer {
+    font-size: 14px;
+  }
 }
 /* --------------------------------------------------------- width 350px portrait  */
 @media screen and (max-width: 350px) and (orientation: portrait) {
@@ -1708,6 +1717,9 @@ footer a {
   }
   .offer a {
     font-size: 26px;
+  }
+  footer {
+    font-size: 11px;
   }
 }
 

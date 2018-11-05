@@ -3,7 +3,7 @@ import '../App.css';
 import Swipeable from 'react-swipeable'
 
 
-export default class Gallery1 extends React.Component {
+export default class GalleryVertical extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

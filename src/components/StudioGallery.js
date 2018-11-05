@@ -1,8 +1,8 @@
 import React from 'react';
 import '../App.css';
 import { menuUp } from './functions';
-import Gallery1 from './Gallery1';
-import Gallery2 from './Gallery2';
+import GalleryVertical from './GalleryVertical';
+import GalleryHorizontal from './GalleryHorizontal';
 
 export default class StudioGallery extends React.Component {
   constructor(props) {
@@ -47,21 +47,21 @@ export default class StudioGallery extends React.Component {
     } = this.state;
     return (
       <div id='about-us-studio-gallery'>
-        <Gallery1
+        <GalleryVertical
           photos={photosStudio}
           title={titleStudio}
           fullPhoto={fullPhoto}
           showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
         <div className='line'></div>
-        <Gallery2
+        <GalleryHorizontal
           photos={photosOther}
           title={titleOther}
           fullPhoto={fullPhoto}
           showPhoto={(photo, all) => this.props.showPhoto(photo, all)}
         />
         <div className='line'></div>
-        <Gallery1
+        <GalleryVertical
           photos={photosSesion}
           title={titleSesion}
           fullPhoto={fullPhoto}
