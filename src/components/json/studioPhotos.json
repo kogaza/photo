@@ -1,0 +1,45 @@
+{
+    "studio": {
+        "title": "Nasze studio",
+        "photos": [
+            "studio/01.jpg",
+            "studio/02.jpg",
+            "studio/03.jpg",
+            "studio/04.jpg",
+            "studio/05.jpg",
+            "studio/06.jpg",
+            "studio/07.jpg",
+            "studio/08.jpg",
+            "studio/09.jpg",
+            "studio/10.jpg",
+            "studio/11.jpg",
+            "studio/12.jpg"
+        ]
+    },
+    "other": {
+        "title": "Nasze zdjęcia",
+        "photos": [
+            "inne/01.jpg",
+            "inne/02.jpg",
+            "inne/03.jpg",
+            "inne/04.jpg",
+            "inne/05.jpg",
+            "inne/06.jpg",
+            "inne/07.jpg",
+            "inne/08.jpg",
+            "inne/09.jpg"
+        ]
+    },
+    "sesion": {
+        "title": "Nasze sesje",
+        "photos": [
+            "sesje/01.jpg",
+            "sesje/02.jpg",
+            "sesje/03.jpg",
+            "sesje/04.jpg",
+            "sesje/05.jpg",
+            "sesje/06.jpg",
+            "sesje/07.jpg"
+        ]
+    }
+}

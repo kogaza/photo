@@ -1,0 +1,62 @@
+{
+    "autumn": {
+        "title": "Sesje jesienne",
+        "photos": [
+            "jesien/01.jpg",
+            "jesien/02.jpg",
+            "jesien/03.jpg",
+            "jesien/04.jpg",
+            "jesien/05.jpg",
+            "jesien/06.jpg",
+            "jesien/07.jpg",
+            "jesien/08.jpg",
+            "jesien/09.jpg",
+            "jesien/10.jpg",
+            "jesien/11.jpg",
+            "jesien/12.jpg",
+            "jesien/13.jpg",
+            "jesien/14.jpg",
+            "jesien/15.jpg",
+            "jesien/16.jpg",
+            "jesien/17.jpg",
+            "jesien/18.jpg",
+            "jesien/19.jpg",
+            "jesien/20.jpg",
+            "jesien/21.jpg"
+        ]
+    },
+    "spring": {
+        "title": "Sesje wiosenne",
+        "photos": [
+            "wiosna/01.jpg",
+            "wiosna/02.jpg",
+            "wiosna/03.jpg",
+            "wiosna/09.jpg",
+            "wiosna/05.jpg",
+            "wiosna/06.jpg",
+            "wiosna/08.jpg",
+            "wiosna/11.jpg",
+            "wiosna/12.jpg",
+            "wiosna/13.jpg",
+            "wiosna/15.jpg",
+            "wiosna/16.jpg",
+            "wiosna/17.jpg",
+            "wiosna/14.jpg"
+        ]
+    },
+    "winter": {
+        "title": "Sesje zimowe",
+        "photos": [
+            "zima/01.jpg",
+            "zima/02.jpg",
+            "zima/03.jpg",
+            "zima/04.jpg",
+            "zima/05.jpg",
+            "zima/06.jpg",
+            "zima/07.jpg",
+            "zima/08.jpg",
+            "zima/09.jpg",
+            "zima/10.jpg"
+        ]
+    }
+}
