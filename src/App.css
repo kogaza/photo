@@ -272,6 +272,9 @@ nav a:hover {
   padding-top: 32px; 
   position: relative;
 }
+#big-photo {
+  cursor: pointer;
+}
 .show-big-photo {
   width: 100vw;
   height: 100vh;
@@ -874,6 +877,9 @@ nav a:hover {
 .studioAll {
   flex: 2;
   padding: 50px;
+}
+.firstAllPhoto {
+  margin-bottom: 20px;
 }
 .textsAll {
   flex: 3;
