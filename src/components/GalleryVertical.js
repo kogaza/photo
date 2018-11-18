@@ -161,6 +161,7 @@ export default class GalleryVertical extends React.Component {
     })
 
     const photoList = photos.filter((v, i) => i < 3).map((p, i) => {
+      console.log('p',p);
       let dataId = p.substring(8, 6);
       let altText = p.substring(0, 8);
       return (

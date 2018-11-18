@@ -22,7 +22,23 @@
             "jesien/18.jpg",
             "jesien/19.jpg",
             "jesien/20.jpg",
-            "jesien/21.jpg"
+            "jesien/21.jpg",
+            "jesien/22.jpg",
+            "jesien/23.jpg",
+            "jesien/24.jpg",
+            "jesien/25.jpg",
+            "jesien/26.jpg",
+            "jesien/27.jpg",
+            "jesien/28.jpg",
+            "jesien/29.jpg",
+            "jesien/30.jpg",
+            "jesien/31.jpg",
+            "jesien/32.jpg",
+            "jesien/33.jpg",
+            "jesien/34.jpg",
+            "jesien/35.jpg",
+            "jesien/36.jpg",
+            "jesien/37.jpg"
         ]
     },
     "spring": {
@@ -31,17 +47,27 @@
             "wiosna/01.jpg",
             "wiosna/02.jpg",
             "wiosna/03.jpg",
-            "wiosna/09.jpg",
+            "wiosna/04.jpg",
             "wiosna/05.jpg",
             "wiosna/06.jpg",
+            "wiosna/07.jpg",
             "wiosna/08.jpg",
+            "wiosna/09.jpg",
+            "wiosna/10.jpg",
             "wiosna/11.jpg",
             "wiosna/12.jpg",
             "wiosna/13.jpg",
+            "wiosna/14.jpg",
             "wiosna/15.jpg",
             "wiosna/16.jpg",
             "wiosna/17.jpg",
-            "wiosna/14.jpg"
+            "wiosna/18.jpg",
+            "wiosna/19.jpg",
+            "wiosna/20.jpg",
+            "wiosna/21.jpg",
+            "wiosna/22.jpg",
+            "wiosna/23.jpg",
+            "wiosna/24.jpg"
         ]
     },
     "winter": {
@@ -56,7 +82,10 @@
             "zima/07.jpg",
             "zima/08.jpg",
             "zima/09.jpg",
-            "zima/10.jpg"
+            "zima/10.jpg",
+            "zima/11.jpg",
+            "zima/12.jpg",
+            "zima/13.jpg"
         ]
     }
 }
